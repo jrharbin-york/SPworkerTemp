@@ -1,0 +1,12 @@
+** TODO Colors: https://stackoverflow.com/questions/384076/how-can-i-color-python-logging-output
+** TODO Ordering; process tests in order!
+** TODO for heterogenous - do not pre-allocate more than 1
+
+* Remaining hardcoded items:
+
+The PYRO_NS_HOSTNAME in rosMain.egl - needs to be set from the DSL - get from current expt runner IP
+NS_HOSTNAME in PyroDaemons.java - in distributed package - again needs to be set in expt runner
+
+Find the current IP and start the nameserver on the node
+Need to start up the nameserver and find the current IP address in Java instead
+
