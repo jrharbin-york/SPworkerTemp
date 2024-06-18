@@ -84,4 +84,4 @@ cd ~/academic/soprano/REPO
 
 NB. The daemon needs to be run under the dist directory from
 pyinstaller; because otherwise e.g. if it is run by Python, it will be
-killed during the script.
+killed during the terminate script.
