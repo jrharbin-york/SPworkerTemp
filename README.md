@@ -55,7 +55,7 @@ Checkout this repo for the daemon here
 ```
 python -m venv ~/academic/pyro
 . ~/academic/pyro/bin/activate
-pip install pyro5 pyinstaller netifaces
+pip install pyro5 pyinstaller netifaces colorlog
 
 cd ~/academic/soprano/REPO
 pyinstaller daemon.py
