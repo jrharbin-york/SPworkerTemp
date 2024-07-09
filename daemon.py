@@ -70,6 +70,11 @@ parser.add_argument("--debug_metric_updates",
                     help="Debug the metric updates on the worker node",
                     default = False)
 
+parser.add_argument("--ssh_port",
+                    dest="ssh_port",
+                    help="The SSH port on the remote worker",
+                    default = 22)
+
 args = parser.parse_args()
 
 node_name = args.worker_ip.replace(".", "_")
@@ -80,8 +85,8 @@ log.info("SOPRANO Worker Daemon node name: " + pyro_daemon_full_name)
 
 # TODO: this needs to be supplied in the experiment config
 #RUN_PATH = "/home/jharbin/eclipse-workspace/PALTesting"
-REMOTE_CODE_DIRECTORY = "/samba/shared-soprano-code/"
-REMOTE_LOGS_DIRECTORY = "/samba/expt-logs/"
+REMOTE_CODE_DIRECTORY = "/home/" + args.expt_runner_user + "/shared-code/"
+REMOTE_LOGS_DIRECTORY = "/home/" + args.expt_runner_user + "/expt-logs/"
 REMOTE_CODE_PATH = args.expt_runner_user + "@" + args.expt_runner_ip + ":" + REMOTE_CODE_DIRECTORY
 
 # TODO: this needs to be supplied in the experiment config
@@ -159,12 +164,14 @@ class TestRunJob:
     def compile(self):
         log.info("Performing compilation for " + self.test_id)
         script_output = subprocess.call([COMPILE_CMD, LOCAL_RUN_PATH])
-        log.info("Resync output:", script_output)
+        log.info("Resync output:" + str(script_output))
         return script_output
         
     def resync(self):
-        script_output = subprocess.call([RESYNC_CMD, REMOTE_CODE_PATH, LOCAL_RUN_PATH])
-        log.info("Resync output:", script_output)
+        ssh_port = args.ssh_port
+        log.info("Resync SSH port " + str(ssh_port))
+        script_output = subprocess.call([RESYNC_CMD, REMOTE_CODE_PATH, LOCAL_RUN_PATH, ssh_port])
+        log.info("Resync output:" + str(script_output))
         return script_output
         
     def prepare(self):
@@ -179,13 +186,13 @@ class TestRunJob:
         #Need to find named class file and generate the relevant run command!
         # The classname for the testrunner can be pro
         classname = self.test_id + "_TestRunner"
-        log.info("Executing job for", self.test_id, ": classname is", classname)
+        log.info("Executing job for" + self.test_id + ": classname is" + classname)
         script_output = subprocess.call([EXPT_RUNNER_CMD, classname, LOCAL_RUN_PATH, pyro_daemon_full_name])
         return script_output
 
     def terminate(self):
         script_output = subprocess.call([TERMINATE_CMD])
-        log.info("Terminate output:", script_output)
+        log.info("Terminate output:" + str(script_output))
         return script_output
     
     def handle(self):
@@ -288,7 +295,7 @@ class WorkManager:
     def terminate_experiment(self, expt_name_dsl, urun_id):
         # TODO: check if the urun_id matches first
         # Synchronising logs
-        script_output = subprocess.call([SYNC_LOGS_CMD, LOCAL_LOGS_PATH, REMOTE_LOGS_DIRECTORY])
+        script_output = subprocess.call([SYNC_LOGS_CMD, LOCAL_LOGS_PATH, REMOTE_LOGS_DIRECTORY, ssh_port])
         return script_output
 
     def register_experiment_completion(self, expt_id):
@@ -306,7 +313,7 @@ class WorkManager:
         if self.active_test_id_matches(update_test_id):
             return self.active_test.update_metric_for_test(metric_name, metric_value, timestamp)
         else:
-            log.warn(str(self) + "METRIC rejected due to invalid test id - should be", jobmanager_test_id, " - received", update_test_id)
+            log.warn(str(self) + "METRIC rejected due to invalid test id - should be " + str(jobmanager_test_id) + " - received " + str(update_test_id))
             return int(MetricRegisterCode.FAILED_INVALID_TEST)
         
     def get_all_metrics(self, target_test_id):
