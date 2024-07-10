@@ -10,10 +10,12 @@ Temporary repository to ease the worker daemon setup
 * ROS components on worker too - all ROS components
 
 ```
-apt-get install python-is-python3 python3-venv python3-pip maven openjdk-11-jdk
-docker run hello-world # - verify docker works
+sudo apt-get install python-is-python3 python3-venv python3-pip maven openjdk-11-jdk openjdk-17-jdk
+docker run hello-world # - verify docker works as normal user
+
 ```
-If Docker is not working as your user, verify it works.
+If Docker is not working as your user, check socket permissions and then try again
+(may have to log out and in again, or reboot)
 
 
 ### Set up the SESAME code (distributed branch)
@@ -33,7 +35,9 @@ Need to install the mvn arctifacts for the project from SESAME code:
 cd ~/academic/sesame/simulationBasedTesting/uk.ac.york.sesame.testing.architecture
 mvn install
 cd ~/academic/sesame/simulationBasedTesting/jrosbridge
-mvn install -DskipTests
+mvn install -Dmaven.test.skip=true
+# mvn install -Dskiptests
+# If it still runs tests, do Ctrl-C
 cd ~/academic/sesame/simulationBasedTesting/uk.ac.york.sesame.testing.architecture.ros
 mvn install
 cd ~/academic/sesame/simulationBasedTesting/uk.ac.york.sesame.testing.dsl
@@ -56,7 +60,7 @@ Checkout this repo for the daemon here
 ```
 python -m venv ~/academic/pyro
 . ~/academic/pyro/bin/activate
-pip install pyro5 pyinstaller netifaces
+pip install pyro5 pyinstaller netifaces structlog docker
 
 cd ~/academic/soprano/REPO
 pyinstaller daemon.py
@@ -68,7 +72,7 @@ ssh-keygen -t rsa
 ssh-copy-id -i ~/.ssh/id_rsa jharbin@expt_manager_ip
 ```
 
-### Befor running experiment (PAL example)
+### Before running experiment (PAL example)
 The Pyro nameserver is now set up on the experiment runner, not on a worker
 
 * Set up PAL from the containers
