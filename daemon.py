@@ -1,3 +1,4 @@
+import structlog
 from netifaces import interfaces, ifaddresses, AF_INET
 from enum import IntEnum
 import subprocess
@@ -8,6 +9,9 @@ import uuid
 import sys
 import argparse
 import os
+import docker
+
+log = structlog.get_logger()
 
 # Circus: https://circus.readthedocs.io/en/latest/for-devs/library/#library
 # Circus library can test e.g. the process status
@@ -16,7 +20,7 @@ import os
 # Pre-test
 
 # Build/run with pyinstaller
-VERSION_ID = 0.31
+VERSION_ID = 0.33
 
 def get_en_ip():
     for ifaceName in interfaces():
@@ -66,33 +70,48 @@ parser.add_argument("--debug_metric_updates",
                     help="Debug the metric updates on the worker node",
                     default = False)
 
+parser.add_argument("--ssh_port",
+                    dest="ssh_port",
+                    help="The SSH port on the remote worker",
+                    default = 22)
+
 args = parser.parse_args()
 
 node_name = args.worker_ip.replace(".", "_")
 pyro_daemon_full_name = "SOPRANOWorkerDaemon_" + node_name
-print("SOPRANO Worker Daemon node name: ", pyro_daemon_full_name)
+log.info("SOPRANO Worker Daemon node name: " + pyro_daemon_full_name)
 
 # TODO: rename 'job' to 'test' throughout
 
 # TODO: this needs to be supplied in the experiment config
 #RUN_PATH = "/home/jharbin/eclipse-workspace/PALTesting"
-REMOTE_CODE_DIRECTORY = "/samba/shared-soprano-code/"
+REMOTE_CODE_DIRECTORY = "/home/" + args.expt_runner_user + "/shared-code/"
+REMOTE_LOGS_DIRECTORY = "/home/" + args.expt_runner_user + "/expt-logs/"
 REMOTE_CODE_PATH = args.expt_runner_user + "@" + args.expt_runner_ip + ":" + REMOTE_CODE_DIRECTORY
 
-print("REMOTE_CODE_PATH: " + str(REMOTE_CODE_PATH))
+# TODO: this needs to be supplied in the experiment config
+REMOTE_CONTAINER_REGISTRIES = {
+    "docker" : "192.168.1.28:5000"
+}
+
+log.info("REMOTE_CODE_PATH: " + str(REMOTE_CODE_PATH))
 
 LOCAL_RUN_PATH = os.getcwd() + "/soprano_code/"
+LOCAL_LOGS_PATH = os.getcwd() + "/soprano_code/logs"
 
 LOCAL_SCRIPT_PATH = LOCAL_RUN_PATH + "/scripts"
 
 # Resync command is in the local script directory
 RESYNC_CMD = "./scripts/rsync_via_ssh.sh"
+SYNC_LOGS_CMD = "./scripts/sync_logs.sh"
+
 COMPILE_CMD = LOCAL_SCRIPT_PATH + "/compile.sh"
 EXPT_RUNNER_CMD = LOCAL_SCRIPT_PATH + "/execute.sh"
 TERMINATE_CMD = LOCAL_SCRIPT_PATH + "/terminate.sh"
 CLEANUP_CMD = LOCAL_SCRIPT_PATH + "/cleanup.sh"
 
-class DepCheckCodes(IntEnum):
+
+class PreInitCheckCodes(IntEnum):
     DEPS_OK = 0
     MISSING_DEP = 1
 
@@ -108,18 +127,30 @@ class MetricRegisterCode(IntEnum):
 
 # TODO: experiment is also a test campaign
 class ExptConfig:
-    def __init__(self,expt_name, dependency_spec):
+    def __init__(self, expt_name, dependency_spec):
         # TODO: how to get the class ID included here
         # TODO: how to setup the metrics
         self.expt_name = expt_name
         self.unique_run_id = str(uuid.uuid4())
-        self.dependency_spec = dependency_spec
+        self.dependencies = dependency_spec
+        self.container_manager = DockerContainerManager()
 
-    def preinit(self):
-        print("Preinitialising experiment: " + str(self))
-        # TODO: Need to ensure all the dependencies are ready here!
-        # e.g. docker, java/maven packages - from dependency_spec
-
+    def pre_init_check(self):
+        log.info("Pre-initialising checks for experiment: " + str(self))
+        return self.check_dependencies()
+    
+    def check_dependencies(self):
+        # If the dependencies e.g. name a container, then ensure it is present
+        # Download it if needed
+        log.info("Checking dependencies for " + self.expt_name)
+        print("dependencies", self.dependencies)
+        for tech in self.dependencies:
+            containers = self.dependencies[tech]
+            if (tech == "DOCKER"):
+                log.info("Ensuring containers " + str(containers) + " are downloaded to this node")
+                self.container_manager.ensure_downloaded_containers(containers)
+        return PreInitCheckCodes.DEPS_OK
+        
     def get_unique_run_id(self):
         return self.unique_run_id
 
@@ -131,14 +162,16 @@ class TestRunJob:
         self.metric_values = {}
 
     def compile(self):
-        print("Performing compilation for " + self.test_id)
+        log.info("Performing compilation for " + self.test_id)
         script_output = subprocess.call([COMPILE_CMD, LOCAL_RUN_PATH])
-        print("Resync output:", script_output)
+        log.info("Resync output:" + str(script_output))
         return script_output
         
     def resync(self):
-        script_output = subprocess.call([RESYNC_CMD, REMOTE_CODE_PATH, LOCAL_RUN_PATH])
-        print("Resync output:", script_output)
+        ssh_port = args.ssh_port
+        log.info("Resync SSH port " + str(ssh_port))
+        script_output = subprocess.call([RESYNC_CMD, REMOTE_CODE_PATH, LOCAL_RUN_PATH, ssh_port])
+        log.info("Resync output:" + str(script_output))
         return script_output
         
     def prepare(self):
@@ -153,13 +186,13 @@ class TestRunJob:
         #Need to find named class file and generate the relevant run command!
         # The classname for the testrunner can be pro
         classname = self.test_id + "_TestRunner"
-        print("Executing job for", self.test_id, ": classname is", classname)
+        log.info("Executing job for" + self.test_id + ": classname is" + classname)
         script_output = subprocess.call([EXPT_RUNNER_CMD, classname, LOCAL_RUN_PATH, pyro_daemon_full_name])
         return script_output
 
     def terminate(self):
         script_output = subprocess.call([TERMINATE_CMD])
-        print("Terminate output:", script_output)
+        log.info("Terminate output:" + str(script_output))
         return script_output
     
     def handle(self):
@@ -177,21 +210,37 @@ class TestRunJob:
 
     def update_metric_for_test(self, metric_name, metric_value, timestamp):
         self.metric_values[metric_name] = metric_value
-        if args.debug_metric_updates:
-            print(str(self) + " - update_metric " + metric_name + "=" + str(metric_value) + " (timestamp " + str(timestamp) + ")")
-            return int(MetricRegisterCode.OK)
+        log.debug(str(self) + " - update_metric " + metric_name + "=" + str(metric_value) + " (timestamp " + str(timestamp) + ")")
+        return int(MetricRegisterCode.OK)
     
     def get_all_metrics_for_test(self):
         return self.metric_values
 
 daemon = Pyro5.api.Daemon(host=args.worker_ip, port=args.worker_port)
-    
+
+# TODO: superclass for different container types
+class DockerContainerManager:
+    def __init__(self):
+        self.docker_client = docker.from_env()
+        self.remote_repository = REMOTE_CONTAINER_REGISTRIES["docker"]
+        
+    def ensure_downloaded_container(self, container):
+        image_tag = self.remote_repository + "/" + container
+        log.info("Ensuring downloading of Docker image tag:" + image_tag)
+        image = self.docker_client.images.pull(image_tag)
+        return image
+
+    def ensure_downloaded_containers(self, containers):
+        for c in containers:
+            self.ensure_downloaded_container(c)
+
 class WorkManager:
     def __init__(self, name):
         self.pending_jobs = []
         self.watcher = threading.Thread(target=self.watch_job_queue, name="WorkManagerWatcher", daemon=True)
         self.current_expt = {}
         self.active_test = None
+        self.container_manager = DockerContainerManager()
 
         # This maps the job unqiue run ID to a hash of info
         self.job_run_info = {}
@@ -209,7 +258,7 @@ class WorkManager:
         
     def watch_job_queue(self):
         while True:
-            print("Polling incoming work queue - " + str(len(self.pending_jobs)) + " jobs registered")
+            log.debug("Polling incoming work queue - " + str(len(self.pending_jobs)) + " jobs registered")
             while len(self.pending_jobs) > 0:
                 job = self.pending_jobs.pop()
                 self.active_test = job
@@ -237,14 +286,21 @@ class WorkManager:
         self.pending_jobs.append(j)
         urun_id = j.get_unique_run_id()
         self.job_run_info[urun_id] = { 'status' : TestStatusCodes.PENDING }
-        print("Job Manager: added job "+ str(j) + "- queue length is now " + str(len(self.pending_jobs)))
+        log.info("Job Manager: added job "+ str(j) + "- queue length is now " + str(len(self.pending_jobs)))
 
     def submit_experiment(self, expt):
         self.current_expt = expt
-        # TODO: check if an experiment is currently running
-        # TODO: check the dependencies
-        print("Submitting experiment" + exptconfig)
+        log.info("Submitting experiment " + str(expt))
 
+    def terminate_experiment(self, expt_name_dsl, urun_id):
+        # TODO: check if the urun_id matches first
+        # Synchronising logs
+        script_output = subprocess.call([SYNC_LOGS_CMD, LOCAL_LOGS_PATH, REMOTE_LOGS_DIRECTORY, ssh_port])
+        return script_output
+
+    def register_experiment_completion(self, expt_id):
+        log.info("Submitting experiment" + str(expt_id))
+        
     def active_test_id_matches(self, given_test_id):
         if self.active_test is None:
             return False
@@ -257,7 +313,7 @@ class WorkManager:
         if self.active_test_id_matches(update_test_id):
             return self.active_test.update_metric_for_test(metric_name, metric_value, timestamp)
         else:
-            print(str(self) + "METRIC rejected due to invalid test id - should be", jobmanager_test_id, " - received", update_test_id)
+            log.warn(str(self) + "METRIC rejected due to invalid test id - should be " + str(jobmanager_test_id) + " - received " + str(update_test_id))
             return int(MetricRegisterCode.FAILED_INVALID_TEST)
         
     def get_all_metrics(self, target_test_id):
@@ -265,6 +321,7 @@ class WorkManager:
         if self.active_test_id_matches(target_test_id):
             return self.active_test.get_all_metrics_for_test()
         else:
+            log.warn("get_all_metrics call does not match the current test_id")
             return {}
 
 jobmanager = WorkManager("SOPRANO")
@@ -280,30 +337,36 @@ class SopranoWorkerDaemon(object):
     def get_version_id(self):
         return VERSION_ID
 
-    def init_experiment(self, expt_name_dsl, dependencies):
-        expt= ExptConfig(expt_name_dsl, dependencies)
-        urun_id = exptj.get_unique_run_id()
-        print("Checking the configuration for experiment campaign name in DSL - " + str(expt_name_dsl))
-        depstatus = jobmanager.check_dependencies(expt)
-        if (depstatus == DepCheckCodes.DEPS_OK):
-              print("Dependencies OK... submitting experiment to expt manager")
-              submit_experiment(expt)
+    def pre_init_experiment(self, expt_name_dsl, dependencies):
+        # TODO: check with job manager if an experiment is currently running first
+        expt = ExptConfig(expt_name_dsl, dependencies)
+        urun_id = expt.get_unique_run_id()
+        log.info("Pre-initialising configuration for experiment campaign name in DSL - " + str(expt_name_dsl))
+        preinitstatus = expt.pre_init_check()
+        if (preinitstatus == PreInitCheckCodes.DEPS_OK):
+              log.info("Dependencies OK... submitting experiment to expt manager")
+              jobmanager.submit_experiment(expt)
+              return [preinitstatus, urun_id]
         else:
-              print("Dependency error")
-              # TODO: details about the missing dependency
+              log.critical("Dependency error - " + preinitstatus)
+        return preinitstatus
+
+    def terminate_experiment(self, expt_name_dsl, urun_id):
+        log.warn("Exiting experiment" + expt_name_dsl)
+        jobmanager.terminate_experiment()
 
     def submit_test(self, test_id):
         # Need to verify preconditions - e.g. are the classes/etc availble in the filesystem?
         testj = TestRunJob(test_id)
         urun_id = testj.get_unique_run_id()
-        print("Submitted job to run test ID " + str(test_id))
+        log.info("Submitted test ID to run: " + str(test_id))
         jobmanager.submit_test(testj)
         return urun_id
 
     def poll_for_status(self, urun_id, test_id):
         status = jobmanager.status_of_job(urun_id)
         if args.debug_polling:
-            print("poll_for_status for test ID ", test_id, + str(urun_id) + " = " + str(status))
+            log.debug("poll_for_status for test ID " + str(test_id) + str(urun_id) + " = " + str(status))
         return int(status)
 
     def update_metric(self, update_test_id, metric_name, metric_value, timestamp):
@@ -314,10 +377,9 @@ class SopranoWorkerDaemon(object):
     
 wd_uri = daemon.register(SopranoWorkerDaemon)
 ns = Pyro5.core.locate_ns(host = args.expt_runner_ip, port = args.nameserver_port)
-print("SOPRANO Worker Daemon Ready: Object uri =", wd_uri)       # print the uri so we can use it in the client later
+log.info("SOPRANO Worker Daemon Ready: Object uri =" + str(wd_uri))       # print the uri so we can use it in the client later
 
 ns.register(pyro_daemon_full_name, wd_uri)
-
-print("Worker daemon registered with nameserver")
+log.info("Worker daemon registered with nameserver")
 
 daemon.requestLoop()                    # start the event loop of the server to wait for calls
