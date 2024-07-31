@@ -6,7 +6,7 @@ export EXPT_MANAGER_IP=144.32.50.77
 
 # Need to use official Docker packages - add Docker's official GPG key:
 sudo apt-get update
-sudo apt-get install ca-certificates curl
+sudo apt-get install ca-certificates curl xterm
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -73,7 +73,6 @@ chmod 700 $HOME/start_zookeeper_kafka.sh
 echo "Please follow the below instructions for VGL setup"
 sudo /opt/VirtualGL/bin/vglserver_config
 
-
 echo "Now installing the key on the experiment runner... please check below and make sure the experiment runner is ready to receive it, or Ctrl-C now"
 echo "SSH_EXPT_RUNNER_PORT: ${SSH_EXPT_RUNNER_PORT}"
 echo "SIMTESTNG_USER: ${SIMTESTING_USER}"
@@ -89,3 +88,7 @@ Test that you can log properly into the experiment manager Docker as recommended
 ssh-copy-id. After doing this, it is recommended that you set "PasswordAuthentication no"
 in /etc/ssh/sshd_config inside the experiment manager Docker.
 END
+
+echo "Also, check the output below for the recommended NVIDIA driver to install"
+sudo ubuntu-drivers devices
+
