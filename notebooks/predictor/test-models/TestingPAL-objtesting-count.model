@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TestingMM:TestingSpace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TestingMM="TestingMM" xmlns:TestingMM.FuzzingOperations="FuzzingOperations" xmlns:TestingMM.MRSPackage="MRSPackage" xmlns:TestingMM.Metrics="Metrics" xmi:id="_VMYbMGKhEe6npZ9UVoAbbA" name="PALScenarios">
+  <metrics xsi:type="TestingMM.Metrics:FuzzingOperationTimesMetric" xmi:id="_elQPEGKhEe6npZ9UVoAbbA" name="fuzzingOperationTimes" dir="LOWEST" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_n6yO0GPEEe6tFd556H5rIA" defaultVal="10000.0"/>
+    <initValue xmi:id="_kBwHwGPEEe6tFd556H5rIA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_-uoSsGPHEe6tFd556H5rIA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_WHv54JV7Ee6LodbHz5gkog" name="M1_countObjectsDelivered" dir="LOWEST" relatedVariables="_yLhuQGKlEe6npZ9UVoAbbA _5ZoH8HOhEe68xv21uncMBA _3n5EkHOhEe68xv21uncMBA" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_WHv54ZV7Ee6LodbHz5gkog"/>
+    <initValue xmi:id="_WHv54pV7Ee6LodbHz5gkog"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_WHv545V7Ee6LodbHz5gkog"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_OSSZ4HOXEe68xv21uncMBA" name="M2_timeReachingTarget" relatedVariables="_yLhuQGKlEe6npZ9UVoAbbA" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_CJFe4HjmEe65loEPyPKKeg" defaultVal="100.0"/>
+    <initValue xmi:id="_OSSZ4XOXEe68xv21uncMBA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_OSSZ4nOXEe68xv21uncMBA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_AaE6IJl5Ee6Cw-FOG_QDjw" name="M3_decisionAlertSignal" relatedVariables="_yLhuQGKlEe6npZ9UVoAbbA" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_AaE6IZl5Ee6Cw-FOG_QDjw" defaultVal="100.0"/>
+    <initValue xmi:id="_AaE6Ipl5Ee6Cw-FOG_QDjw"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_AaE6I5l5Ee6Cw-FOG_QDjw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_ayZEcHOXEe68xv21uncMBA" name="M4_distanceFromHumanOmni" dir="LOWEST" relatedVariables="_rEOvsHOhEe68xv21uncMBA _tf8jIHbhEe6XHr8wNaxuXQ" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_kkPrgHjmEe65loEPyPKKeg" defaultVal="1000.0"/>
+    <initValue xmi:id="_ayZEcXOXEe68xv21uncMBA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_ayZEcnOXEe68xv21uncMBA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_FfNY8HfwEe65loEPyPKKeg" name="M2_distanceFromHumanPMB2" dir="LOWEST" relatedVariables="_sw6EAGw6Ee6NTJHqpVnHDQ _tf8jIHbhEe6XHr8wNaxuXQ" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_zmzrwHjmEe65loEPyPKKeg" defaultVal="1000.0"/>
+    <initValue xmi:id="_FfNY8XfwEe65loEPyPKKeg"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_FfNY8nfwEe65loEPyPKKeg"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_Zs94AHOYEe68xv21uncMBA" name="CV_PMB2_LoadedTrue_Time">
+    <initValue xmi:id="_RBSkgHOcEe68xv21uncMBA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_2A0dQHOaEe68xv21uncMBA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_ZsVBgJl5Ee6Cw-FOG_QDjw" name="CV_PMB2_LoadedFalse_Time">
+    <initValue xmi:id="_ZsVBgZl5Ee6Cw-FOG_QDjw"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_ZsVBgpl5Ee6Cw-FOG_QDjw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_uxjHwJl5Ee6Cw-FOG_QDjw" name="CV_Omni_LoadedTrue_Time">
+    <initValue xmi:id="_uxjHwZl5Ee6Cw-FOG_QDjw"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_uxjHwpl5Ee6Cw-FOG_QDjw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_uxjHw5l5Ee6Cw-FOG_QDjw" name="CV_Omni_LoadedFalse_Time">
+    <initValue xmi:id="_uxjHxJl5Ee6Cw-FOG_QDjw"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_uxjHxZl5Ee6Cw-FOG_QDjw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_Fa_IYHOfEe68xv21uncMBA" name="CV_DistanceFromHumanOmni">
+    <initValue xmi:id="_Fa_IYXOfEe68xv21uncMBA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_Fa_IYnOfEe68xv21uncMBA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_589oUHfwEe65loEPyPKKeg" name="CV_DistanceFromHumanPMB2">
+    <initValue xmi:id="_589oUXfwEe65loEPyPKKeg"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_589oUnfwEe65loEPyPKKeg"/>
+  </metrics>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_7R6D8GKlEe6npZ9UVoAbbA" name="tiago1_AlterVel" variableToAffect="_yLhuQGKlEe6npZ9UVoAbbA">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ylHDgGPEEe6tFd556H5rIA" endTime="100.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_d--1wJwnEe6y4Y8p3y0PVw" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_d--1wZwnEe6y4Y8p3y0PVw" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_d--1wpwnEe6y4Y8p3y0PVw" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_26XpAJl5Ee6Cw-FOG_QDjw" name="failureTrigger" variableToAffect="_zGM-AJkwEe6Cw-FOG_QDjw" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_26XpAZl5Ee6Cw-FOG_QDjw" endTime="100.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_-EP1wJl5Ee6Cw-FOG_QDjw" name="uncertaintyTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_-EP1wJl5Ee6Cw-FOG_QDjw" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_-EP1wZl5Ee6Cw-FOG_QDjw" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_-EP1wpl5Ee6Cw-FOG_QDjw" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_YnVoAG2KEe6NTJHqpVnHDQ" name="distortBaseScanPMB2" variableToAffect="_uZy9UHOhEe68xv21uncMBA" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_GlMCcG2QEe6NTJHqpVnHDQ" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_WHqpcJW_Ee6LodbHz5gkog" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_mt7nAG6BEe6upaW3FMquwA" name="distortBaseScanOmni" variableToAffect="_cRGkAG2KEe6NTJHqpVnHDQ" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_mt7nAW6BEe6upaW3FMquwA" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_YeBc0JW_Ee6LodbHz5gkog" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_kXVr0HOfEe68xv21uncMBA" name="distortBaseScanTiago" variableToAffect="_u_FIYG6CEe6upaW3FMquwA" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_kXVr0XOfEe68xv21uncMBA" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_Ysv1UJW_Ee6LodbHz5gkog" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:PacketLossNetworkOperation" xmi:id="_K6PlYHOqEe68xv21uncMBA" name="packetLossLaserScanOmni" variableToAffect="_cRGkAG2KEe6NTJHqpVnHDQ">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_Vy04gHOqEe68xv21uncMBA" endTime="200.0"/>
+    <frequency xmi:id="_dXxQoHOqEe68xv21uncMBA" upperBound="1.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:PacketLossNetworkOperation" xmi:id="_Rbym0HOqEe68xv21uncMBA" name="packetLossLaserScanPMB2" variableToAffect="_uZy9UHOhEe68xv21uncMBA">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_XekBkHOqEe68xv21uncMBA" endTime="200.0"/>
+    <frequency xmi:id="_eYxaoHOqEe68xv21uncMBA" upperBound="1.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:PacketLossNetworkOperation" xmi:id="_UEGs4HOqEe68xv21uncMBA" name="packetLossLaserScanTiago" variableToAffect="_u_FIYG6CEe6upaW3FMquwA">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_bZbUoHOqEe68xv21uncMBA" endTime="200.0"/>
+    <frequency xmi:id="_fO80sHOqEe68xv21uncMBA" upperBound="1.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:LatencyNetworkOperation" xmi:id="_BLt1IHOrEe68xv21uncMBA" name="delayBaseScanOmni" variableToAffect="_cRGkAG2KEe6NTJHqpVnHDQ">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_DuOOIHOrEe68xv21uncMBA" endTime="200.0"/>
+    <latency xmi:id="_EygVoHOrEe68xv21uncMBA" upperBound="2.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:LatencyNetworkOperation" xmi:id="_GPQngHOrEe68xv21uncMBA" name="delayBaseScanPMB2" variableToAffect="_uZy9UHOhEe68xv21uncMBA">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_GPQngXOrEe68xv21uncMBA" endTime="200.0"/>
+    <latency xmi:id="_GPQngnOrEe68xv21uncMBA" upperBound="2.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:LatencyNetworkOperation" xmi:id="_LhkOoHOrEe68xv21uncMBA" name="delayBaseScanTiago1" variableToAffect="_u_FIYG6CEe6upaW3FMquwA">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_LhkOoXOrEe68xv21uncMBA" endTime="200.0"/>
+    <latency xmi:id="_LhkOonOrEe68xv21uncMBA" upperBound="2.0"/>
+  </possibleFuzzingOperations>
+  <campaigns xmi:id="_j6G3EGKlEe6npZ9UVoAbbA" name="scenario1" metrics="_elQPEGKhEe6npZ9UVoAbbA _OSSZ4HOXEe68xv21uncMBA _ayZEcHOXEe68xv21uncMBA _FfNY8HfwEe65loEPyPKKeg _WHv54JV7Ee6LodbHz5gkog">
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_gxFoQGPEEe6tFd556H5rIA" populationSize="16" iterations="160"/>
+    <performedTests xmi:id="_IcvfUpwGEe6UoczNs3yRsA" name="Test_001_16_12_2023_08_47_36">
+      <metrics xmi:id="_IcwGYJwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcwGYZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcwGYpwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcwGY5wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="158.138"/>
+      </metrics>
+      <metrics xmi:id="_IcwGZJwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcwGZZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.195216348293544"/>
+      </metrics>
+      <metrics xmi:id="_IcwGZpwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcwGZ5wGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.052635534071253"/>
+      </metrics>
+      <metrics xmi:id="_IcwGaJwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcwGaZwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="9.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcwGapwGEe6UoczNs3yRsA" name="Test_002_16_12_2023_08_47_36">
+      <metrics xmi:id="_IcwGa5wGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcwGbJwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcwGbZwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcwGbpwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="161.264"/>
+      </metrics>
+      <metrics xmi:id="_IcwGb5wGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcwGcJwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.180218445206704"/>
+      </metrics>
+      <metrics xmi:id="_IcwGcZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcwGcpwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.0426818544889365"/>
+      </metrics>
+      <metrics xmi:id="_IcwGc5wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcwGdJwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcwGdZwGEe6UoczNs3yRsA" name="Test_003_16_12_2023_08_47_36">
+      <metrics xmi:id="_IcwGdpwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcwGd5wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcwGeJwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcwGeZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="141.44"/>
+      </metrics>
+      <metrics xmi:id="_IcwGepwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcwGe5wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.189418964278952"/>
+      </metrics>
+      <metrics xmi:id="_IcwGfJwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcwGfZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.038744947913536"/>
+      </metrics>
+      <metrics xmi:id="_IcwGfpwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcwGf5wGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="9.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcwGgJwGEe6UoczNs3yRsA" name="Test_004_16_12_2023_08_47_36">
+      <metrics xmi:id="_IcwtcJwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcwtcZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcwtcpwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Icwtc5wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="140.968"/>
+      </metrics>
+      <metrics xmi:id="_IcwtdJwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcwtdZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.164305197817293"/>
+      </metrics>
+      <metrics xmi:id="_IcwtdpwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Icwtd5wGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.0273605885013937"/>
+      </metrics>
+      <metrics xmi:id="_IcwteJwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcwteZwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="11.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcwtepwGEe6UoczNs3yRsA" name="Test_005_16_12_2023_08_47_36">
+      <metrics xmi:id="_Icwte5wGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcwtfJwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcwtfZwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcwtfpwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="163.606"/>
+      </metrics>
+      <metrics xmi:id="_Icwtf5wGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcwtgJwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1794118719861126"/>
+      </metrics>
+      <metrics xmi:id="_IcwtgZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcwtgpwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.066199765888343"/>
+      </metrics>
+      <metrics xmi:id="_Icwtg5wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcwthJwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="9.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcwthZwGEe6UoczNs3yRsA" name="Test_006_16_12_2023_08_47_36">
+      <metrics xmi:id="_IcwthpwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Icwth5wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcwtiJwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcwtiZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="144.853"/>
+      </metrics>
+      <metrics xmi:id="_IcwtipwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Icwti5wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.172634963076599"/>
+      </metrics>
+      <metrics xmi:id="_IcwtjJwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcwtjZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1320871196939497"/>
+      </metrics>
+      <metrics xmi:id="_IcwtjpwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Icwtj5wGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcwtkJwGEe6UoczNs3yRsA" name="Test_007_16_12_2023_08_47_36">
+      <metrics xmi:id="_IcwtkZwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcwtkpwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Icwtk5wGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcwtlJwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="177.459"/>
+      </metrics>
+      <metrics xmi:id="_IcwtlZwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcxUgJwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.176287496453499"/>
+      </metrics>
+      <metrics xmi:id="_IcxUgZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcxUgpwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.0604490999586043"/>
+      </metrics>
+      <metrics xmi:id="_IcxUg5wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcxUhJwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="7.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcxUhZwGEe6UoczNs3yRsA" name="Test_008_16_12_2023_08_47_36">
+      <metrics xmi:id="_IcxUhpwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcxUh5wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcxUiJwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcxUiZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="154.147"/>
+      </metrics>
+      <metrics xmi:id="_IcxUipwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcxUi5wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1925540501749268"/>
+      </metrics>
+      <metrics xmi:id="_IcxUjJwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcxUjZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1098756364159152"/>
+      </metrics>
+      <metrics xmi:id="_IcxUjpwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcxUj5wGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcxUkJwGEe6UoczNs3yRsA" name="Test_009_16_12_2023_09_30_27" developedFrom="_IcwGapwGEe6UoczNs3yRsA _IcwtepwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IcxUkZwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcxUkpwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcxUk5wGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcxUlJwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="167.027"/>
+      </metrics>
+      <metrics xmi:id="_IcxUlZwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcxUlpwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.165746034857282"/>
+      </metrics>
+      <metrics xmi:id="_IcxUl5wGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcxUmJwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.172695445872874"/>
+      </metrics>
+      <metrics xmi:id="_IcxUmZwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcxUmpwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcxUm5wGEe6UoczNs3yRsA" name="Test_010_16_12_2023_09_30_27" developedFrom="_IcwGapwGEe6UoczNs3yRsA _IcwtepwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IcxUnJwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcxUnZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcxUnpwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcxUn5wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="151.733"/>
+      </metrics>
+      <metrics xmi:id="_IcxUoJwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcxUoZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.169919680568954"/>
+      </metrics>
+      <metrics xmi:id="_IcxUopwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Icx7kJwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.164679823742046"/>
+      </metrics>
+      <metrics xmi:id="_Icx7kZwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Icx7kpwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Icx7k5wGEe6UoczNs3yRsA" name="Test_011_16_12_2023_09_30_27" developedFrom="_IcxUhZwGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Icx7lJwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Icx7lZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Icx7lpwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Icx7l5wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="158.299"/>
+      </metrics>
+      <metrics xmi:id="_Icx7mJwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Icx7mZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1815607671175794"/>
+      </metrics>
+      <metrics xmi:id="_Icx7mpwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Icx7m5wGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1506729524388533"/>
+      </metrics>
+      <metrics xmi:id="_Icx7nJwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Icx7nZwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="9.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Icx7npwGEe6UoczNs3yRsA" name="Test_012_16_12_2023_09_30_27" developedFrom="_IcxUhZwGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Icx7n5wGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Icx7oJwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Icx7oZwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Icx7opwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="148.921"/>
+      </metrics>
+      <metrics xmi:id="_Icx7o5wGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Icx7pJwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.189742973378129"/>
+      </metrics>
+      <metrics xmi:id="_Icx7pZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Icx7ppwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.127845271997883"/>
+      </metrics>
+      <metrics xmi:id="_Icx7p5wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Icx7qJwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Icx7qZwGEe6UoczNs3yRsA" name="Test_013_16_12_2023_09_30_27" developedFrom="_IcwGdZwGEe6UoczNs3yRsA _IcwthZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Icx7qpwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Icx7q5wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Icx7rJwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Icx7rZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="145.77"/>
+      </metrics>
+      <metrics xmi:id="_Icx7rpwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Icx7r5wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1799824757137"/>
+      </metrics>
+      <metrics xmi:id="_Icx7sJwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Icx7sZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1834206478954505"/>
+      </metrics>
+      <metrics xmi:id="_Icx7spwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Icx7s5wGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Icx7tJwGEe6UoczNs3yRsA" name="Test_014_16_12_2023_09_30_27" developedFrom="_IcwGdZwGEe6UoczNs3yRsA _IcwthZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IcyioJwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcyioZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcyiopwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Icyio5wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="148.06"/>
+      </metrics>
+      <metrics xmi:id="_IcyipJwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcyipZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.176536806516299"/>
+      </metrics>
+      <metrics xmi:id="_IcyippwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Icyip5wGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.130943275861517"/>
+      </metrics>
+      <metrics xmi:id="_IcyiqJwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcyiqZwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcyiqpwGEe6UoczNs3yRsA" name="Test_015_16_12_2023_09_30_27" developedFrom="_IcwGapwGEe6UoczNs3yRsA _IcwGgJwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Icyiq5wGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcyirJwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcyirZwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcyirpwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="146.831"/>
+      </metrics>
+      <metrics xmi:id="_Icyir5wGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IcyisJwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.2016537210514353"/>
+      </metrics>
+      <metrics xmi:id="_IcyisZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcyispwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1638430262360484"/>
+      </metrics>
+      <metrics xmi:id="_Icyis5wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IcyitJwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcyitZwGEe6UoczNs3yRsA" name="Test_016_16_12_2023_09_30_27" developedFrom="_IcwGapwGEe6UoczNs3yRsA _IcwGgJwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IcyitpwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Icyit5wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IcyiuJwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcyiuZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="176.903"/>
+      </metrics>
+      <metrics xmi:id="_IcyiupwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Icyiu5wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.165343291763008"/>
+      </metrics>
+      <metrics xmi:id="_IcyivJwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IcyivZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.0506121302318596"/>
+      </metrics>
+      <metrics xmi:id="_IcyivpwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Icyiv5wGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IcyiwJwGEe6UoczNs3yRsA" name="Test_017_16_12_2023_10_13_20" developedFrom="_IcwGgJwGEe6UoczNs3yRsA _IcwthZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IcyiwZwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IcyiwpwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Icyiw5wGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IcyixJwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="154.461"/>
+      </metrics>
+      <metrics xmi:id="_IcyixZwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IczJsJwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1656521113746803"/>
+      </metrics>
+      <metrics xmi:id="_IczJsZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IczJspwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.004737127749567"/>
+      </metrics>
+      <metrics xmi:id="_IczJs5wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IczJtJwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IczJtZwGEe6UoczNs3yRsA" name="Test_018_16_12_2023_10_13_20" developedFrom="_IcwGgJwGEe6UoczNs3yRsA _IcwthZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IczJtpwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IczJt5wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IczJuJwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IczJuZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="148.808"/>
+      </metrics>
+      <metrics xmi:id="_IczJupwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IczJu5wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.15837829081887"/>
+      </metrics>
+      <metrics xmi:id="_IczJvJwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IczJvZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.172957380041565"/>
+      </metrics>
+      <metrics xmi:id="_IczJvpwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IczJv5wGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IczJwJwGEe6UoczNs3yRsA" name="Test_019_16_12_2023_10_13_20" developedFrom="_IcwtepwGEe6UoczNs3yRsA _IcwGgJwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IczJwZwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IczJwpwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IczJw5wGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IczJxJwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="153.446"/>
+      </metrics>
+      <metrics xmi:id="_IczJxZwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IczJxpwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.170692028756275"/>
+      </metrics>
+      <metrics xmi:id="_IczJx5wGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IczJyJwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.132366314097949"/>
+      </metrics>
+      <metrics xmi:id="_IczJyZwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IczJypwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IczJy5wGEe6UoczNs3yRsA" name="Test_020_16_12_2023_10_13_20" developedFrom="_IcwtepwGEe6UoczNs3yRsA _IcwGgJwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IczJzJwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IczJzZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes" value="10000.0"/>
+      </metrics>
+      <metrics xmi:id="_IczJzpwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IczJz5wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics xmi:id="_IczJ0JwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_IczJ0ZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_IczJ0pwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IczJ05wGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_IczJ1JwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_IczwwJwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IczwwZwGEe6UoczNs3yRsA" name="Test_021_16_12_2023_10_13_20" developedFrom="_IcvfUpwGEe6UoczNs3yRsA _IcwtkJwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IczwwpwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Iczww5wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_IczwxJwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_IczwxZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="146.064"/>
+      </metrics>
+      <metrics xmi:id="_IczwxpwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Iczwx5wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1741457844095584"/>
+      </metrics>
+      <metrics xmi:id="_IczwyJwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_IczwyZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.0461227974432514"/>
+      </metrics>
+      <metrics xmi:id="_IczwypwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Iczwy5wGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_IczwzJwGEe6UoczNs3yRsA" name="Test_022_16_12_2023_10_13_20" developedFrom="_IcvfUpwGEe6UoczNs3yRsA _IcwtkJwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_IczwzZwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_IczwzpwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Iczwz5wGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Iczw0JwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="145.274"/>
+      </metrics>
+      <metrics xmi:id="_Iczw0ZwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Iczw0pwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.17754161089183"/>
+      </metrics>
+      <metrics xmi:id="_Iczw05wGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Iczw1JwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.163331445513848"/>
+      </metrics>
+      <metrics xmi:id="_Iczw1ZwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Iczw1pwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Iczw15wGEe6UoczNs3yRsA" name="Test_023_16_12_2023_10_13_20" developedFrom="_IcyitZwGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Iczw2JwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Iczw2ZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Iczw2pwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Iczw25wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="179.856"/>
+      </metrics>
+      <metrics xmi:id="_Iczw3JwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Iczw3ZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.202350213977698"/>
+      </metrics>
+      <metrics xmi:id="_Iczw3pwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Iczw35wGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1338537646481828"/>
+      </metrics>
+      <metrics xmi:id="_Iczw4JwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Iczw4ZwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="7.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Iczw4pwGEe6UoczNs3yRsA" name="Test_024_16_12_2023_10_13_20" developedFrom="_IcyitZwGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Iczw45wGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Iczw5JwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Iczw5ZwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0X0JwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="164.734"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X0ZwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0X0pwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.224115957485886"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X05wGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic0X1JwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.0473026471450186"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X1ZwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic0X1pwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="7.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Ic0X15wGEe6UoczNs3yRsA" name="Test_025_16_12_2023_10_56_15" developedFrom="_IczJy5wGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Ic0X2JwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Ic0X2ZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X2pwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0X25wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="147.967"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X3JwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0X3ZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.174019277989109"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X3pwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic0X35wGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1975282597150283"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X4JwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic0X4ZwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Ic0X4pwGEe6UoczNs3yRsA" name="Test_026_16_12_2023_10_56_15" developedFrom="_IczJy5wGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Ic0X45wGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Ic0X5JwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X5ZwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0X5pwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="142.549"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X55wGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0X6JwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1785630246580925"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X6ZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic0X6pwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.0426546501602423"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X65wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic0X7JwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="9.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Ic0X7ZwGEe6UoczNs3yRsA" name="Test_027_16_12_2023_10_56_15" developedFrom="_IczJtZwGEe6UoczNs3yRsA _IcwGapwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Ic0X7pwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Ic0X75wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X8JwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0X8ZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="153.546"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X8pwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0X85wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.192791030167539"/>
+      </metrics>
+      <metrics xmi:id="_Ic0X9JwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic0X9ZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1318295657393094"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-4JwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic0-4ZwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="7.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Ic0-4pwGEe6UoczNs3yRsA" name="Test_028_16_12_2023_10_56_15" developedFrom="_IczJtZwGEe6UoczNs3yRsA _IcwGapwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Ic0-45wGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Ic0-5JwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-5ZwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0-5pwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="152.558"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-55wGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0-6JwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1630933435757145"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-6ZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic0-6pwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.026521770563217"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-65wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic0-7JwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="9.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Ic0-7ZwGEe6UoczNs3yRsA" name="Test_029_16_12_2023_10_56_15" developedFrom="_Iczw4pwGEe6UoczNs3yRsA _IczJy5wGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Ic0-7pwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Ic0-75wGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-8JwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0-8ZwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="159.637"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-8pwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0-85wGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.225131689045118"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-9JwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic0-9ZwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.1494037054035524"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-9pwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic0-95wGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Ic0--JwGEe6UoczNs3yRsA" name="Test_030_16_12_2023_10_56_15" developedFrom="_Iczw4pwGEe6UoczNs3yRsA _IczJy5wGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Ic0--ZwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Ic0--pwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Ic0--5wGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0-_JwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="153.662"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-_ZwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic0-_pwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1787395414257236"/>
+      </metrics>
+      <metrics xmi:id="_Ic0-_5wGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic0_AJwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.130505912523066"/>
+      </metrics>
+      <metrics xmi:id="_Ic0_AZwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic0_ApwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Ic0_A5wGEe6UoczNs3yRsA" name="Test_031_16_12_2023_10_56_15" developedFrom="_IczJy5wGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Ic1l8JwGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Ic1l8ZwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Ic1l8pwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic1l85wGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="168.819"/>
+      </metrics>
+      <metrics xmi:id="_Ic1l9JwGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic1l9ZwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1670893802068467"/>
+      </metrics>
+      <metrics xmi:id="_Ic1l9pwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic1l95wGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.0682715170202908"/>
+      </metrics>
+      <metrics xmi:id="_Ic1l-JwGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic1l-ZwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="9.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Ic1l-pwGEe6UoczNs3yRsA" name="Test_032_16_12_2023_10_56_15" developedFrom="_IczJy5wGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA">
+      <metrics xmi:id="_Ic1l-5wGEe6UoczNs3yRsA" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Ic1l_JwGEe6UoczNs3yRsA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_Ic1l_ZwGEe6UoczNs3yRsA" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Ic1l_pwGEe6UoczNs3yRsA" name="M2_timeReachingTarget" value="153.563"/>
+      </metrics>
+      <metrics xmi:id="_Ic1l_5wGEe6UoczNs3yRsA" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Ic1mAJwGEe6UoczNs3yRsA" name="M4_distanceFromHumanOmni" value="2.1666348945874248"/>
+      </metrics>
+      <metrics xmi:id="_Ic1mAZwGEe6UoczNs3yRsA" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Ic1mApwGEe6UoczNs3yRsA" name="M2_distanceFromHumanPMB2" value="2.085346371824702"/>
+      </metrics>
+      <metrics xmi:id="_Ic1mA5wGEe6UoczNs3yRsA" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Ic1mBJwGEe6UoczNs3yRsA" name="M1_countObjectsDelivered" value="9.0"/>
+      </metrics>
+    </performedTests>
+    <resultSets xmi:id="_Ic1mBZwGEe6UoczNs3yRsA" name="FULL-16_12_2023_10_13_20-intermediate-16" status="INTERMEDIATE" results="_IcwGapwGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA _IcwGgJwGEe6UoczNs3yRsA _IcwtkJwGEe6UoczNs3yRsA _IcyitZwGEe6UoczNs3yRsA _IcvfUpwGEe6UoczNs3yRsA _IcwtepwGEe6UoczNs3yRsA _IcwthZwGEe6UoczNs3yRsA"/>
+    <resultSets xmi:id="_Ic1mBpwGEe6UoczNs3yRsA" name="NONDOM-16_12_2023_10_13_20-intermediate-16" status="INTERMEDIATE" results="_IcwGapwGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA _IcwGgJwGEe6UoczNs3yRsA _IcwtkJwGEe6UoczNs3yRsA _IcyitZwGEe6UoczNs3yRsA"/>
+    <resultSets xmi:id="_Ic1mB5wGEe6UoczNs3yRsA" name="FULL-16_12_2023_10_56_15-intermediate-24" status="INTERMEDIATE" results="_IcwGapwGEe6UoczNs3yRsA _IcwGgJwGEe6UoczNs3yRsA _IcyiwJwGEe6UoczNs3yRsA _IczJtZwGEe6UoczNs3yRsA _IczJy5wGEe6UoczNs3yRsA _Iczw15wGEe6UoczNs3yRsA _Iczw4pwGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA"/>
+    <resultSets xmi:id="_Ic1mCJwGEe6UoczNs3yRsA" name="NONDOM-16_12_2023_10_56_15-intermediate-24" status="INTERMEDIATE" results="_IcwGapwGEe6UoczNs3yRsA _IcwGgJwGEe6UoczNs3yRsA _IcyiwJwGEe6UoczNs3yRsA _IczJtZwGEe6UoczNs3yRsA _IczJy5wGEe6UoczNs3yRsA _Iczw15wGEe6UoczNs3yRsA _Iczw4pwGEe6UoczNs3yRsA _IcwGdZwGEe6UoczNs3yRsA"/>
+    <resultSets xmi:id="_Ic1mCZwGEe6UoczNs3yRsA" name="FULL-16_12_2023_11_39_11-intermediate-32" status="INTERMEDIATE" results="_IcwGapwGEe6UoczNs3yRsA _IcyiwJwGEe6UoczNs3yRsA _IczJtZwGEe6UoczNs3yRsA _IczJy5wGEe6UoczNs3yRsA _Iczw15wGEe6UoczNs3yRsA _Iczw4pwGEe6UoczNs3yRsA _Ic0X15wGEe6UoczNs3yRsA _Ic1l-pwGEe6UoczNs3yRsA"/>
+    <resultSets xmi:id="_Ic1mCpwGEe6UoczNs3yRsA" name="NONDOM-16_12_2023_11_39_11-intermediate-32" status="INTERMEDIATE" results="_IcwGapwGEe6UoczNs3yRsA _IcyiwJwGEe6UoczNs3yRsA _IczJtZwGEe6UoczNs3yRsA _IczJy5wGEe6UoczNs3yRsA _Iczw15wGEe6UoczNs3yRsA _Iczw4pwGEe6UoczNs3yRsA _Ic0X15wGEe6UoczNs3yRsA _Ic1l-pwGEe6UoczNs3yRsA"/>
+    <resultSets xmi:id="_Ic1mC5wGEe6UoczNs3yRsA" name="FULL-16_12_2023_11_39_11-final" results="_IcwGapwGEe6UoczNs3yRsA _IcyiwJwGEe6UoczNs3yRsA _IczJtZwGEe6UoczNs3yRsA _IczJy5wGEe6UoczNs3yRsA _Iczw15wGEe6UoczNs3yRsA _Iczw4pwGEe6UoczNs3yRsA _Ic0X15wGEe6UoczNs3yRsA _Ic1l-pwGEe6UoczNs3yRsA"/>
+    <resultSets xmi:id="_Ic1mDJwGEe6UoczNs3yRsA" name="NONDOM-16_12_2023_11_39_11-final" results="_IcwGapwGEe6UoczNs3yRsA _IcyiwJwGEe6UoczNs3yRsA _IczJtZwGEe6UoczNs3yRsA _IczJy5wGEe6UoczNs3yRsA _Iczw15wGEe6UoczNs3yRsA _Iczw4pwGEe6UoczNs3yRsA _Ic0X15wGEe6UoczNs3yRsA _Ic1l-pwGEe6UoczNs3yRsA"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_1H2GAGPEEe6tFd556H5rIA" timeLimitSeconds="300"/>
+  </campaigns>
+  <campaigns xmi:id="_GT_eYJl6Ee6Cw-FOG_QDjw" name="scenario2" metrics="_elQPEGKhEe6npZ9UVoAbbA _OSSZ4HOXEe68xv21uncMBA _ayZEcHOXEe68xv21uncMBA _FfNY8HfwEe65loEPyPKKeg _WHv54JV7Ee6LodbHz5gkog">
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_GT_eYZl6Ee6Cw-FOG_QDjw" populationSize="16" iterations="160"/>
+    <performedTests xmi:id="_GT_eYpl6Ee6Cw-FOG_QDjw" name="Test_001_09_12_2023_16_26_13"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_GT_eY5l6Ee6Cw-FOG_QDjw" timeLimitSeconds="300"/>
+  </campaigns>
+  <mrs xmi:id="_ejhz8GKlEe6npZ9UVoAbbA" launchFileLocation="/home/jharbin/academic/pal/run_pal_cuda_v6.sh" launchDelaySeconds="20">
+    <variables xmi:id="_sw6EAGw6Ee6NTJHqpVnHDQ" name="/pmb2_1/ground_truth_odom" type="_vjgjwGwUEe6ELdyKyNpbFQ"/>
+    <variables xmi:id="_6ig-kJkwEe6Cw-FOG_QDjw" name="/pmb2_1/conserts/forth/dosIN" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_eO2hkJllEe6Cw-FOG_QDjw" name="/pmb2_1/conserts/detection/certainty" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_zGM-AJkwEe6Cw-FOG_QDjw" name="/pmb2_1/pause_navigationIN" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_uZy9UHOhEe68xv21uncMBA" name="/pmb2_1/scan_raw" type="_7sM48G2KEe6NTJHqpVnHDQ"/>
+    <variables xmi:id="_Fd0xMJkTEe6Cw-FOG_QDjw" name="/pmb2_1/performance" type="_Z4HMgHOiEe68xv21uncMBA"/>
+    <variables xmi:id="_3n5EkHOhEe68xv21uncMBA" name="/pmb2_1/conserts/pal/loaded" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_rEOvsHOhEe68xv21uncMBA" name="/omni_base_1/ground_truth_odom" type="_vjgjwGwUEe6ELdyKyNpbFQ"/>
+    <variables xmi:id="_cRGkAG2KEe6NTJHqpVnHDQ" name="/omni_base_1/scan_raw" type="_7sM48G2KEe6NTJHqpVnHDQ"/>
+    <variables xmi:id="_5ZoH8HOhEe68xv21uncMBA" name="/omni_base_1/conserts/pal/loaded" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_yLhuQGKlEe6npZ9UVoAbbA" name="/tiago_1/ground_truth_odom" type="_vjgjwGwUEe6ELdyKyNpbFQ"/>
+    <variables xmi:id="_u_FIYG6CEe6upaW3FMquwA" name="/tiago_1/scan_raw" type="_7sM48G2KEe6NTJHqpVnHDQ"/>
+    <variables xmi:id="_tf8jIHbhEe6XHr8wNaxuXQ" name="/human1_location_ground_truth" type="_u5c0oGPFEe6tFd556H5rIA"/>
+    <nodes xmi:id="_tJySsGKlEe6npZ9UVoAbbA" name="tiago_1" publisher="_yLhuQGKlEe6npZ9UVoAbbA _u_FIYG6CEe6upaW3FMquwA"/>
+    <nodes xmi:id="_p2BAMGw6Ee6NTJHqpVnHDQ" name="pmb2_1" publisher="_sw6EAGw6Ee6NTJHqpVnHDQ _uZy9UHOhEe68xv21uncMBA"/>
+    <nodes xmi:id="_SGqhkG2QEe6NTJHqpVnHDQ" name="omni_base_1" publisher="_cRGkAG2KEe6NTJHqpVnHDQ _rEOvsHOhEe68xv21uncMBA"/>
+    <simulator xsi:type="TestingMM.MRSPackage:ROSSimulator" xmi:id="_wSX0QGKlEe6npZ9UVoAbbA" hostname="localhost" port="9090"/>
+    <propertyType xmi:id="_W0fm0GPFEe6tFd556H5rIA" name="linear">
+      <parameters xmi:id="_ZdaJ0GPFEe6tFd556H5rIA" name="X" type="_cWvHYGPFEe6tFd556H5rIA"/>
+      <parameters xmi:id="_belXYGPFEe6tFd556H5rIA" name="Y" type="_cWvHYGPFEe6tFd556H5rIA"/>
+      <parameters xmi:id="_ef1h4GPFEe6tFd556H5rIA" name="Z" type="_cWvHYGPFEe6tFd556H5rIA"/>
+    </propertyType>
+    <propertyType xmi:id="_cWvHYGPFEe6tFd556H5rIA" name="float64"/>
+    <propertyType xmi:id="_kHlNgGPFEe6tFd556H5rIA" name="geometry_msgs/Twist">
+      <parameters xmi:id="_mPTvAGPFEe6tFd556H5rIA" name="linear" type="_u5c0oGPFEe6tFd556H5rIA">
+        <subparameters xmi:id="_n8tsAGPFEe6tFd556H5rIA" name="X" type="_cWvHYGPFEe6tFd556H5rIA"/>
+        <subparameters xmi:id="_pO9-EGPFEe6tFd556H5rIA" name="Y" type="_cWvHYGPFEe6tFd556H5rIA"/>
+        <subparameters xmi:id="_qOceEGPFEe6tFd556H5rIA" name="Z" type="_cWvHYGPFEe6tFd556H5rIA"/>
+      </parameters>
+    </propertyType>
+    <propertyType xmi:id="_u5c0oGPFEe6tFd556H5rIA" name="geometry_msgs/Point"/>
+    <propertyType xmi:id="_vjgjwGwUEe6ELdyKyNpbFQ" name="nav_msgs/Odometry"/>
+    <propertyType xmi:id="_7sM48G2KEe6NTJHqpVnHDQ" name="sensor_msgs/LaserScan"/>
+    <propertyType xmi:id="_Z4HMgHOiEe68xv21uncMBA" name="String"/>
+    <propertyType xmi:id="_bll7MJZCEe6N_bLIooN25A" name="std_msgs/Bool"/>
+  </mrs>
+</TestingMM:TestingSpace>
