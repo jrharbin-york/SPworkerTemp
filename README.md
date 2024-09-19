@@ -67,10 +67,11 @@ pyinstaller daemon.py
 ```
 
 ### Setup an SSH key and copy to experiment manager
-This is needed to synchronize the generated code with the experiment manager
+This is needed to synchronize the generated code with the experiment manager.
+The below command copies it onto the Docker container for the experiment manager...
 ```
 ssh-keygen -t rsa
-ssh-copy-id -i ~/.ssh/id_rsa jharbin@expt_manager_ip
+ssh-copy-id -i ~/.ssh/id_rsa -p 39222 simtesting@192.168.1.28
 ```
 
 ### Before running experiment (PAL example)
@@ -93,3 +94,8 @@ pyinstaller; because otherwise e.g. if it is run by e.g. "python3 ./daemon.py", 
 killed during the terminate script after a particular test!
 
 * Ensure the IP of the experiment runner is set up in the model
+
+** Current errors:
+
+The script will exit if the nameserver is not running when connecting... ideally it should
+loop waiting to connect
