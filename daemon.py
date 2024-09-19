@@ -81,7 +81,7 @@ parser.add_argument("--debug_metric_updates",
 parser.add_argument("--ssh_port",
                     dest="ssh_port",
                     help="The SSH port on the remote worker",
-                    default = 22)
+                    default = "22")
 
 args = parser.parse_args()
 

@@ -36,7 +36,7 @@ cd ~/academic/sesame/simulationBasedTesting/uk.ac.york.sesame.testing.architectu
 mvn install
 cd ~/academic/sesame/simulationBasedTesting/jrosbridge
 mvn install -Dmaven.test.skip=true
-# mvn install -Dskiptests
+# mvn install -DskipTests
 # If it still runs tests, do Ctrl-C
 cd ~/academic/sesame/simulationBasedTesting/uk.ac.york.sesame.testing.architecture.ros
 mvn install
@@ -97,5 +97,10 @@ killed during the terminate script after a particular test!
 
 ** Current errors:
 
-The script will exit if the nameserver is not running when connecting... ideally it should
-loop waiting to connect
+* TODO: there is still a hardcoded hostname in evolutionary.distributed/PyroDaemons.java
+* TODO: terminate.egl should not terminate all Docker containers if there is no Docker used - otherwise this kills a local experiment runner in a container
+* TODO: configurable path for the JVM? - at the moment it is hardcoded in compile.egl and execute.egl
+* TODO: with no metrics in the model, the generated code is invalid!
+* TODO: every metric must have IN stream, or code is invalid
+* TODO: there is still a hardcoded hostname IP for the Pyro nameserver in the generated test runner
+
