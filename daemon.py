@@ -21,14 +21,22 @@ log = structlog.get_logger()
 # Pre-test
 
 # Build/run with pyinstaller
-VERSION_ID = 0.33
+VERSION_ID = 0.34
 
+# Time in seconds to wait if failing to connect to the nameserver
+CONNECTION_FAILURE_RETRY_TIME = 10
+
+# Fixes to scan all IP addresses, since sometimes, if an IPv6/Docker interface
+# is found first, no IP will be recognised
 def get_en_ip():
+    addresses = []
     for ifaceName in interfaces():
         if "en" in ifaceName:
-            addresses = [i['addr'] for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'No IP addr'}] )]
-            for a in addresses:
-                return a
+            addresses += [i['addr'] for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'NO_IP_ADDR'}] )]
+    for a in addresses:
+        if a != "NO_IP_ADDR":
+            return a
+    return "NO_IP_ADDR"
 
 def get_en_ip_as_underscores():
     a = get_en_ip()
@@ -74,7 +82,7 @@ parser.add_argument("--debug_metric_updates",
 parser.add_argument("--ssh_port",
                     dest="ssh_port",
                     help="The SSH port on the remote worker",
-                    default = 22)
+                    default = "22")
 
 args = parser.parse_args()
 
@@ -369,12 +377,28 @@ class SopranoWorkerDaemon(object):
     
     def get_all_metrics(self, target_test_id):
         return jobmanager.get_all_metrics(target_test_id)
+
+
+def try_register_ns(wd_uri):
+    ns = Pyro5.core.locate_ns(host = args.expt_runner_ip, port = args.nameserver_port)
+    log.info("SOPRANO Worker Daemon Ready: Object uri =" + str(wd_uri))       # print the uri so we can use it in the client later
+
+    ns.register(pyro_daemon_full_name, wd_uri)
+    log.info("Worker daemon registered with nameserver")
+
+    daemon.requestLoop()                    # start the event loop of the server to wait for calls
+
+def register_classes():
+    wd_uri = daemon.register(SopranoWorkerDaemon)
+    return wd_uri
     
-wd_uri = daemon.register(SopranoWorkerDaemon)
-ns = Pyro5.core.locate_ns(host = args.expt_runner_ip, port = args.nameserver_port)
-log.info("SOPRANO Worker Daemon Ready: Object uri =" + str(wd_uri))       # print the uri so we can use it in the client later
-
-ns.register(pyro_daemon_full_name, wd_uri)
-log.info("Worker daemon registered with nameserver")
-
-daemon.requestLoop()                    # start the event loop of the server to wait for calls
+def startup_loop():
+    wd_uri = register_classes()
+    while True:
+        try:
+            try_register_ns(wd_uri)
+        except Pyro5.errors.NamingError:
+            log.info("Could not connect to nameserver... will retry in " + str(CONNECTION_FAILURE_RETRY_TIME) + " seconds")
+            time.sleep(CONNECTION_FAILURE_RETRY_TIME)
+            
+startup_loop()
