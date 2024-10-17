@@ -10,6 +10,8 @@ import sys
 import argparse
 import os
 import docker
+import tarfile
+import docker_container_manager
 
 log = structlog.get_logger()
 
@@ -20,14 +22,22 @@ log = structlog.get_logger()
 # Pre-test
 
 # Build/run with pyinstaller
-VERSION_ID = 0.33
+VERSION_ID = 0.34
 
+# Time in seconds to wait if failing to connect to the nameserver
+CONNECTION_FAILURE_RETRY_TIME = 10
+
+# Fixes to scan all IP addresses, since sometimes, if an IPv6/Docker interface
+# is found first, no IP will be recognised
 def get_en_ip():
+    addresses = []
     for ifaceName in interfaces():
         if "en" in ifaceName:
-            addresses = [i['addr'] for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'No IP addr'}] )]
-            for a in addresses:
-                return a
+            addresses += [i['addr'] for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'NO_IP_ADDR'}] )]
+    for a in addresses:
+        if a != "NO_IP_ADDR":
+            return a
+    return "NO_IP_ADDR"
 
 def get_en_ip_as_underscores():
     a = get_en_ip()
@@ -73,7 +83,7 @@ parser.add_argument("--debug_metric_updates",
 parser.add_argument("--ssh_port",
                     dest="ssh_port",
                     help="The SSH port on the remote worker",
-                    default = 22)
+                    default = "22")
 
 args = parser.parse_args()
 
@@ -88,6 +98,8 @@ log.info("SOPRANO Worker Daemon node name: " + pyro_daemon_full_name)
 REMOTE_CODE_DIRECTORY = "/home/" + args.expt_runner_user + "/shared-code/"
 REMOTE_LOGS_DIRECTORY = "/home/" + args.expt_runner_user + "/expt-logs/"
 REMOTE_CODE_PATH = args.expt_runner_user + "@" + args.expt_runner_ip + ":" + REMOTE_CODE_DIRECTORY
+
+CREATE_NEW_CONTAINER_LOCALLY = True
 
 # TODO: this needs to be supplied in the experiment config
 REMOTE_CONTAINER_REGISTRIES = {
@@ -174,11 +186,16 @@ class TestRunJob:
         log.info("Resync output:" + str(script_output))
         return script_output
         
-    def prepare(self):
+    def prepare(self, container_manager):
         # TODO: do the resync of the directory here
         resync_output = self.resync()
         if (resync_output == 0):
-            return self.compile()
+            containers_output = container_manager.prepare_individual_test_containers(self)
+            if (containers_prepared == 0):
+                compile_output = self.compile()
+                return compile_output
+            else:
+                return containers_output
         else:
             return resync_output
 
@@ -195,10 +212,10 @@ class TestRunJob:
         log.info("Terminate output:" + str(script_output))
         return script_output
     
-    def handle(self):
+    def handle(self, container_manager):
         # Ensure the metrics are cleared before starting
         self.metric_values = {}
-        self.prepare()
+        self.prepare(container_manager)
         self.execute()
         self.terminate()
 
@@ -218,21 +235,6 @@ class TestRunJob:
 
 daemon = Pyro5.api.Daemon(host=args.worker_ip, port=args.worker_port)
 
-# TODO: superclass for different container types
-class DockerContainerManager:
-    def __init__(self):
-        self.docker_client = docker.from_env()
-        self.remote_repository = REMOTE_CONTAINER_REGISTRIES["docker"]
-        
-    def ensure_downloaded_container(self, container):
-        image_tag = self.remote_repository + "/" + container
-        log.info("Ensuring downloading of Docker image tag:" + image_tag)
-        image = self.docker_client.images.pull(image_tag)
-        return image
-
-    def ensure_downloaded_containers(self, containers):
-        for c in containers:
-            self.ensure_downloaded_container(c)
 
 class WorkManager:
     def __init__(self, name):
@@ -266,7 +268,10 @@ class WorkManager:
                 self.current_test_id = job.get_test_id()
                 self.set_job_status(job, TestStatusCodes.RUNNING)
                 # Need to check nothing else is running now!
-                job.handle()
+
+                # Needs to also ensure that they have a reference to the container manager
+                job.handle(self.container_manager)
+                
 		# block for a moment before testing again
                 self.set_job_status(job, TestStatusCodes.COMPLETED)
                 self.active_test = None
@@ -374,12 +379,28 @@ class SopranoWorkerDaemon(object):
     
     def get_all_metrics(self, target_test_id):
         return jobmanager.get_all_metrics(target_test_id)
+
+
+def try_register_ns(wd_uri):
+    ns = Pyro5.core.locate_ns(host = args.expt_runner_ip, port = args.nameserver_port)
+    log.info("SOPRANO Worker Daemon Ready: Object uri =" + str(wd_uri))       # print the uri so we can use it in the client later
+
+    ns.register(pyro_daemon_full_name, wd_uri)
+    log.info("Worker daemon registered with nameserver")
+
+    daemon.requestLoop()                    # start the event loop of the server to wait for calls
+
+def register_classes():
+    wd_uri = daemon.register(SopranoWorkerDaemon)
+    return wd_uri
     
-wd_uri = daemon.register(SopranoWorkerDaemon)
-ns = Pyro5.core.locate_ns(host = args.expt_runner_ip, port = args.nameserver_port)
-log.info("SOPRANO Worker Daemon Ready: Object uri =" + str(wd_uri))       # print the uri so we can use it in the client later
-
-ns.register(pyro_daemon_full_name, wd_uri)
-log.info("Worker daemon registered with nameserver")
-
-daemon.requestLoop()                    # start the event loop of the server to wait for calls
+def startup_loop():
+    wd_uri = register_classes()
+    while True:
+        try:
+            try_register_ns(wd_uri)
+        except Pyro5.errors.NamingError:
+            log.info("Could not connect to nameserver... will retry in " + str(CONNECTION_FAILURE_RETRY_TIME) + " seconds")
+            time.sleep(CONNECTION_FAILURE_RETRY_TIME)
+            
+startup_loop()

@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TestingMM:TestingSpace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TestingMM="TestingMM" xmlns:TestingMM.FuzzingOperations="FuzzingOperations" xmlns:TestingMM.MRSPackage="MRSPackage" xmlns:TestingMM.Metrics="Metrics" xmi:id="_VMYbMGKhEe6npZ9UVoAbbA" name="PALScenarios">
+  <metrics xsi:type="TestingMM.Metrics:FuzzingOperationTimesMetric" xmi:id="_elQPEGKhEe6npZ9UVoAbbA" name="fuzzingOperationTimes" dir="LOWEST" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_n6yO0GPEEe6tFd556H5rIA" defaultVal="10000.0"/>
+    <initValue xmi:id="_kBwHwGPEEe6tFd556H5rIA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_-uoSsGPHEe6tFd556H5rIA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_WHv54JV7Ee6LodbHz5gkog" name="M1_countObjectsDelivered" dir="LOWEST" relatedVariables="_yLhuQGKlEe6npZ9UVoAbbA _5ZoH8HOhEe68xv21uncMBA _3n5EkHOhEe68xv21uncMBA" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_WHv54ZV7Ee6LodbHz5gkog"/>
+    <initValue xmi:id="_WHv54pV7Ee6LodbHz5gkog"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_WHv545V7Ee6LodbHz5gkog"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_OSSZ4HOXEe68xv21uncMBA" name="M2_timeReachingTarget" relatedVariables="_yLhuQGKlEe6npZ9UVoAbbA" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_CJFe4HjmEe65loEPyPKKeg" defaultVal="100.0"/>
+    <initValue xmi:id="_OSSZ4XOXEe68xv21uncMBA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_OSSZ4nOXEe68xv21uncMBA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_AaE6IJl5Ee6Cw-FOG_QDjw" name="M3_decisionAlertSignal" relatedVariables="_yLhuQGKlEe6npZ9UVoAbbA" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_AaE6IZl5Ee6Cw-FOG_QDjw" defaultVal="100.0"/>
+    <initValue xmi:id="_AaE6Ipl5Ee6Cw-FOG_QDjw"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_AaE6I5l5Ee6Cw-FOG_QDjw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_ayZEcHOXEe68xv21uncMBA" name="M4_distanceFromHumanOmni" dir="LOWEST" relatedVariables="_rEOvsHOhEe68xv21uncMBA _tf8jIHbhEe6XHr8wNaxuXQ" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_kkPrgHjmEe65loEPyPKKeg" defaultVal="1000.0"/>
+    <initValue xmi:id="_ayZEcXOXEe68xv21uncMBA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_ayZEcnOXEe68xv21uncMBA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_FfNY8HfwEe65loEPyPKKeg" name="M2_distanceFromHumanPMB2" dir="LOWEST" relatedVariables="_sw6EAGw6Ee6NTJHqpVnHDQ _tf8jIHbhEe6XHr8wNaxuXQ" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_zmzrwHjmEe65loEPyPKKeg" defaultVal="1000.0"/>
+    <initValue xmi:id="_FfNY8XfwEe65loEPyPKKeg"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_FfNY8nfwEe65loEPyPKKeg"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_Zs94AHOYEe68xv21uncMBA" name="CV_PMB2_LoadedTrue_Time">
+    <initValue xmi:id="_RBSkgHOcEe68xv21uncMBA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_2A0dQHOaEe68xv21uncMBA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_ZsVBgJl5Ee6Cw-FOG_QDjw" name="CV_PMB2_LoadedFalse_Time">
+    <initValue xmi:id="_ZsVBgZl5Ee6Cw-FOG_QDjw"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_ZsVBgpl5Ee6Cw-FOG_QDjw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_uxjHwJl5Ee6Cw-FOG_QDjw" name="CV_Omni_LoadedTrue_Time">
+    <initValue xmi:id="_uxjHwZl5Ee6Cw-FOG_QDjw"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_uxjHwpl5Ee6Cw-FOG_QDjw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_uxjHw5l5Ee6Cw-FOG_QDjw" name="CV_Omni_LoadedFalse_Time">
+    <initValue xmi:id="_uxjHxJl5Ee6Cw-FOG_QDjw"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_uxjHxZl5Ee6Cw-FOG_QDjw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_Fa_IYHOfEe68xv21uncMBA" name="CV_DistanceFromHumanOmni">
+    <initValue xmi:id="_Fa_IYXOfEe68xv21uncMBA"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_Fa_IYnOfEe68xv21uncMBA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_589oUHfwEe65loEPyPKKeg" name="CV_DistanceFromHumanPMB2">
+    <initValue xmi:id="_589oUXfwEe65loEPyPKKeg"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_589oUnfwEe65loEPyPKKeg"/>
+  </metrics>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_7R6D8GKlEe6npZ9UVoAbbA" name="tiago1_AlterVel" variableToAffect="_yLhuQGKlEe6npZ9UVoAbbA">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ylHDgGPEEe6tFd556H5rIA" endTime="100.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_d--1wJwnEe6y4Y8p3y0PVw" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" customProcessClass="injectDOSAttackMessage">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_d--1wZwnEe6y4Y8p3y0PVw" startTime="80.0" endTime="200.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_26XpAJl5Ee6Cw-FOG_QDjw" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" customProcessClass="injectFailureMessage">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_26XpAZl5Ee6Cw-FOG_QDjw" startTime="80.0" endTime="200.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_-EP1wJl5Ee6Cw-FOG_QDjw" name="uncertaintyTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_-EP1wJl5Ee6Cw-FOG_QDjw" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_-EP1wZl5Ee6Cw-FOG_QDjw" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_-EP1wpl5Ee6Cw-FOG_QDjw" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_YnVoAG2KEe6NTJHqpVnHDQ" name="distortBaseScanPMB2" variableToAffect="_uZy9UHOhEe68xv21uncMBA" inclusionProbability="0.5" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_GlMCcG2QEe6NTJHqpVnHDQ" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_WHqpcJW_Ee6LodbHz5gkog" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_mt7nAG6BEe6upaW3FMquwA" name="distortBaseScanOmni" variableToAffect="_cRGkAG2KEe6NTJHqpVnHDQ" inclusionProbability="0.5" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_mt7nAW6BEe6upaW3FMquwA" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_YeBc0JW_Ee6LodbHz5gkog" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_kXVr0HOfEe68xv21uncMBA" name="distortBaseScanTiago" variableToAffect="_u_FIYG6CEe6upaW3FMquwA" inclusionProbability="0.5" customProcessClass="distortBaseScan">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_kXVr0XOfEe68xv21uncMBA" endTime="100.0"/>
+    <params xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_Ysv1UJW_Ee6LodbHz5gkog" propertyName="rangeFactor" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:PacketLossNetworkOperation" xmi:id="_K6PlYHOqEe68xv21uncMBA" name="packetLossLaserScanOmni" variableToAffect="_cRGkAG2KEe6NTJHqpVnHDQ" inclusionProbability="0.5">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_Vy04gHOqEe68xv21uncMBA" endTime="200.0"/>
+    <frequency xmi:id="_dXxQoHOqEe68xv21uncMBA" upperBound="1.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:PacketLossNetworkOperation" xmi:id="_Rbym0HOqEe68xv21uncMBA" name="packetLossLaserScanPMB2" variableToAffect="_uZy9UHOhEe68xv21uncMBA" inclusionProbability="0.5">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_XekBkHOqEe68xv21uncMBA" endTime="200.0"/>
+    <frequency xmi:id="_eYxaoHOqEe68xv21uncMBA" upperBound="1.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:PacketLossNetworkOperation" xmi:id="_UEGs4HOqEe68xv21uncMBA" name="packetLossLaserScanTiago" variableToAffect="_u_FIYG6CEe6upaW3FMquwA" inclusionProbability="0.5">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_bZbUoHOqEe68xv21uncMBA" endTime="200.0"/>
+    <frequency xmi:id="_fO80sHOqEe68xv21uncMBA" upperBound="1.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:LatencyNetworkOperation" xmi:id="_BLt1IHOrEe68xv21uncMBA" name="delayBaseScanOmni" variableToAffect="_cRGkAG2KEe6NTJHqpVnHDQ" inclusionProbability="0.5">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_DuOOIHOrEe68xv21uncMBA" endTime="200.0"/>
+    <latency xmi:id="_EygVoHOrEe68xv21uncMBA" upperBound="2.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:LatencyNetworkOperation" xmi:id="_GPQngHOrEe68xv21uncMBA" name="delayBaseScanPMB2" variableToAffect="_uZy9UHOhEe68xv21uncMBA" inclusionProbability="0.5">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_GPQngXOrEe68xv21uncMBA" endTime="200.0"/>
+    <latency xmi:id="_GPQngnOrEe68xv21uncMBA" upperBound="2.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:LatencyNetworkOperation" xmi:id="_LhkOoHOrEe68xv21uncMBA" name="delayBaseScanTiago1" variableToAffect="_u_FIYG6CEe6upaW3FMquwA" inclusionProbability="0.5">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_LhkOoXOrEe68xv21uncMBA" endTime="200.0"/>
+    <latency xmi:id="_LhkOonOrEe68xv21uncMBA" upperBound="2.0"/>
+  </possibleFuzzingOperations>
+  <campaigns xmi:id="_j6G3EGKlEe6npZ9UVoAbbA" name="scenario1" metrics="_elQPEGKhEe6npZ9UVoAbbA _OSSZ4HOXEe68xv21uncMBA _ayZEcHOXEe68xv21uncMBA _FfNY8HfwEe65loEPyPKKeg _WHv54JV7Ee6LodbHz5gkog">
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_gxFoQGPEEe6tFd556H5rIA" populationSize="16" iterations="160"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_1H2GAGPEEe6tFd556H5rIA" timeLimitSeconds="300"/>
+  </campaigns>
+  <campaigns xmi:id="_UtTZkJwoEe6y4Y8p3y0PVw" name="testFailureTrigger" metrics="_elQPEGKhEe6npZ9UVoAbbA _WHv54JV7Ee6LodbHz5gkog">
+    <activationGeneration xsi:type="TestingMM:TimeBasedActivationGenerationMethod" xmi:id="_pBx_YJwoEe6y4Y8p3y0PVw"/>
+    <approach xsi:type="TestingMM:RepeatedExecution" xmi:id="_W_GdEJwoEe6y4Y8p3y0PVw" testToRepeat="_ZISXIJwoEe6y4Y8p3y0PVw" repeatCount="1"/>
+    <performedTests xmi:id="_ZISXIJwoEe6y4Y8p3y0PVw" name="TestFailureTrigger">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_fSM7sJwoEe6y4Y8p3y0PVw" name="triggerFailure" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_AaytMJwpEe6y4Y8p3y0PVw" endTime="300.0"/>
+      </operations>
+    </performedTests>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_wTpDcJwoEe6y4Y8p3y0PVw" timeLimitSeconds="300"/>
+  </campaigns>
+  <campaigns xmi:id="_uSN4cJyPEe604LKE6vjj1A" name="testDOSAttack" metrics="_elQPEGKhEe6npZ9UVoAbbA _WHv54JV7Ee6LodbHz5gkog">
+    <activationGeneration xsi:type="TestingMM:TimeBasedActivationGenerationMethod" xmi:id="_uSN4cZyPEe604LKE6vjj1A"/>
+    <approach xsi:type="TestingMM:RepeatedExecution" xmi:id="_uSN4cpyPEe604LKE6vjj1A" testToRepeat="_uSN4c5yPEe604LKE6vjj1A" repeatCount="1"/>
+    <performedTests xmi:id="_uSN4c5yPEe604LKE6vjj1A" name="TestDOSTrigger">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_uSN4dJyPEe604LKE6vjj1A" name="triggerDOS" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_uSN4dZyPEe604LKE6vjj1A" endTime="300.0"/>
+      </operations>
+    </performedTests>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_uSN4dpyPEe604LKE6vjj1A" timeLimitSeconds="300"/>
+  </campaigns>
+  <campaigns xmi:id="_v5IjMJygEe604LKE6vjj1A" name="baseline" metrics="_elQPEGKhEe6npZ9UVoAbbA _OSSZ4HOXEe68xv21uncMBA _ayZEcHOXEe68xv21uncMBA _FfNY8HfwEe65loEPyPKKeg _WHv54JV7Ee6LodbHz5gkog" includedOperations="_26XpAJl5Ee6Cw-FOG_QDjw">
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_v5IjMZygEe604LKE6vjj1A" populationSize="16" iterations="160"/>
+    <performedTests xmi:id="_OpUWQJzKEe604LKE6vjj1A" name="Test_001_17_12_2023_07_04_00">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpUWQZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-6828098759400569101" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpUWQpzKEe604LKE6vjj1A" startTime="101.02801305072076" endTime="180.3006243268581"/>
+      </operations>
+      <metrics xmi:id="_OpU9UJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpU9UZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="79.27261127613734"/>
+      </metrics>
+      <metrics xmi:id="_OpU9UpzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpU9U5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics xmi:id="_OpU9VJzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpU9VZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="3.3555691135499726"/>
+      </metrics>
+      <metrics xmi:id="_OpU9VpzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpU9V5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109569899488978"/>
+      </metrics>
+      <metrics xmi:id="_OpU9WJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpU9WZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpU9WpzKEe604LKE6vjj1A" name="Test_002_17_12_2023_07_04_00">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpU9W5zKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-9120347827065377552" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpU9XJzKEe604LKE6vjj1A" startTime="86.0521734187039" endTime="188.16585759672554"/>
+      </operations>
+      <metrics xmi:id="_OpU9XZzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpU9XpzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="102.11368417802164"/>
+      </metrics>
+      <metrics xmi:id="_OpVkYJzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpVkYZzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="293.649"/>
+      </metrics>
+      <metrics xmi:id="_OpVkYpzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpVkY5zKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.220865890926581"/>
+      </metrics>
+      <metrics xmi:id="_OpVkZJzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpVkZZzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.10947872236863"/>
+      </metrics>
+      <metrics xmi:id="_OpVkZpzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpVkZ5zKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpVkaJzKEe604LKE6vjj1A" name="Test_003_17_12_2023_07_04_00">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpVkaZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="2199050853159637086" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpVkapzKEe604LKE6vjj1A" startTime="196.45237049518556" endTime="197.51763771782387"/>
+      </operations>
+      <metrics xmi:id="_OpVka5zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpVkbJzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="1.0652672226383118"/>
+      </metrics>
+      <metrics xmi:id="_OpVkbZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpVkbpzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="162.509"/>
+      </metrics>
+      <metrics xmi:id="_OpVkb5zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpVkcJzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="1.4451592592757967"/>
+      </metrics>
+      <metrics xmi:id="_OpWLcJzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpWLcZzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="2.0353698160436786"/>
+      </metrics>
+      <metrics xmi:id="_OpWLcpzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpWLc5zKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpWLdJzKEe604LKE6vjj1A" name="Test_004_17_12_2023_07_04_00">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpWLdZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-176922634940543035" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpWLdpzKEe604LKE6vjj1A" startTime="155.5144785653584" endTime="172.10683321512707"/>
+      </operations>
+      <metrics xmi:id="_OpWLd5zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpWLeJzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="16.59235464976868"/>
+      </metrics>
+      <metrics xmi:id="_OpWLeZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpWLepzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="145.048"/>
+      </metrics>
+      <metrics xmi:id="_OpWLe5zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpWLfJzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.167466591707618"/>
+      </metrics>
+      <metrics xmi:id="_OpWLfZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpWLfpzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="3.465516158497273"/>
+      </metrics>
+      <metrics xmi:id="_OpWLf5zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpWLgJzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpWygJzKEe604LKE6vjj1A" name="Test_005_17_12_2023_07_04_00">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpWygZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-4125823232517749771" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpWygpzKEe604LKE6vjj1A" startTime="82.85316747595436" endTime="198.54632439889713"/>
+      </operations>
+      <metrics xmi:id="_OpWyg5zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpWyhJzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="115.69315692294276"/>
+      </metrics>
+      <metrics xmi:id="_OpWyhZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpWyhpzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics xmi:id="_OpWyh5zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpWyiJzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="3.3555692106515145"/>
+      </metrics>
+      <metrics xmi:id="_OpWyiZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpWyipzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109480586497049"/>
+      </metrics>
+      <metrics xmi:id="_OpWyi5zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpWyjJzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpWyjZzKEe604LKE6vjj1A" name="Test_006_17_12_2023_07_04_00">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpWyjpzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-6095549421261659218" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpWyj5zKEe604LKE6vjj1A" startTime="89.12789787245325" endTime="91.23871668303482"/>
+      </operations>
+      <metrics xmi:id="_OpXZkJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpXZkZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="2.110818810581577"/>
+      </metrics>
+      <metrics xmi:id="_OpXZkpzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpXZk5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="212.244"/>
+      </metrics>
+      <metrics xmi:id="_OpXZlJzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpXZlZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1651938306214054"/>
+      </metrics>
+      <metrics xmi:id="_OpXZlpzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpXZl5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109566535373236"/>
+      </metrics>
+      <metrics xmi:id="_OpXZmJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpXZmZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpXZmpzKEe604LKE6vjj1A" name="Test_007_17_12_2023_07_04_00">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpXZm5zKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="107524461327268447" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpXZnJzKEe604LKE6vjj1A" startTime="173.54760281507527" endTime="186.3000572801362"/>
+      </operations>
+      <metrics xmi:id="_OpXZnZzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpXZnpzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="12.752454465060936"/>
+      </metrics>
+      <metrics xmi:id="_OpXZn5zKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpXZoJzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="266.957"/>
+      </metrics>
+      <metrics xmi:id="_OpXZoZzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpYAoJzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1592158063809723"/>
+      </metrics>
+      <metrics xmi:id="_OpYAoZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpYAopzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.1095669255805705"/>
+      </metrics>
+      <metrics xmi:id="_OpYAo5zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpYApJzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpYApZzKEe604LKE6vjj1A" name="Test_008_17_12_2023_07_04_00">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpYAppzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="8717404123262724089" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpYAp5zKEe604LKE6vjj1A" startTime="121.08134838473906" endTime="188.8693301591456"/>
+      </operations>
+      <metrics xmi:id="_OpYAqJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpYAqZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="67.78798177440653"/>
+      </metrics>
+      <metrics xmi:id="_OpYAqpzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpYAq5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="148.949"/>
+      </metrics>
+      <metrics xmi:id="_OpYArJzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpYArZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1753700288943594"/>
+      </metrics>
+      <metrics xmi:id="_OpYArpzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpYAr5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109565558188494"/>
+      </metrics>
+      <metrics xmi:id="_OpYAsJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpYAsZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpYnsJzKEe604LKE6vjj1A" name="Test_009_17_12_2023_07_46_50" developedFrom="_OpUWQJzKEe604LKE6vjj1A _OpU9WpzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpYnsZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-6828098759400569101" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpYnspzKEe604LKE6vjj1A" startTime="112.70665866638117" endTime="187.37890933419976"/>
+      </operations>
+      <metrics xmi:id="_OpYns5zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpYntJzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="74.67225066781859"/>
+      </metrics>
+      <metrics xmi:id="_OpYntZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpYntpzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="197.502"/>
+      </metrics>
+      <metrics xmi:id="_OpYnt5zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpYnuJzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1920603973317676"/>
+      </metrics>
+      <metrics xmi:id="_OpYnuZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpYnupzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109562236057181"/>
+      </metrics>
+      <metrics xmi:id="_OpYnu5zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpYnvJzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpYnvZzKEe604LKE6vjj1A" name="Test_010_17_12_2023_07_46_50" developedFrom="_OpUWQJzKEe604LKE6vjj1A _OpU9WpzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpYnvpzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-9120347827065377552" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpYnv5zKEe604LKE6vjj1A" startTime="86.0521734187039" endTime="188.16585759672554"/>
+      </operations>
+      <metrics xmi:id="_OpYnwJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpYnwZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="102.11368417802164"/>
+      </metrics>
+      <metrics xmi:id="_OpZOwJzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpZOwZzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="288.556"/>
+      </metrics>
+      <metrics xmi:id="_OpZOwpzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpZOw5zKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1889123450013575"/>
+      </metrics>
+      <metrics xmi:id="_OpZOxJzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpZOxZzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109564854608795"/>
+      </metrics>
+      <metrics xmi:id="_OpZOxpzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpZOx5zKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpZOyJzKEe604LKE6vjj1A" name="Test_011_17_12_2023_07_46_50" developedFrom="_OpWygJzKEe604LKE6vjj1A _OpUWQJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpZOyZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-4125823232517749771" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpZOypzKEe604LKE6vjj1A" startTime="82.85316747595436" endTime="198.54632439889713"/>
+      </operations>
+      <metrics xmi:id="_OpZOy5zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpZOzJzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="115.69315692294276"/>
+      </metrics>
+      <metrics xmi:id="_OpZOzZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpZOzpzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="269.865"/>
+      </metrics>
+      <metrics xmi:id="_OpZOz5zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpZO0JzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.185381971361249"/>
+      </metrics>
+      <metrics xmi:id="_OpZO0ZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpZO0pzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109567084476715"/>
+      </metrics>
+      <metrics xmi:id="_OpZO05zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpZO1JzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpZO1ZzKEe604LKE6vjj1A" name="Test_012_17_12_2023_07_46_50" developedFrom="_OpWygJzKEe604LKE6vjj1A _OpUWQJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpZO1pzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-6828098759400569101" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpZO15zKEe604LKE6vjj1A" startTime="101.02801305072076" endTime="180.3006243268581"/>
+      </operations>
+      <metrics xmi:id="_OpZO2JzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpZO2ZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="79.27261127613734"/>
+      </metrics>
+      <metrics xmi:id="_OpZO2pzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpZO25zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics xmi:id="_OpZO3JzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpZO3ZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="3.355569093620688"/>
+      </metrics>
+      <metrics xmi:id="_OpZO3pzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpZO35zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109563771413173"/>
+      </metrics>
+      <metrics xmi:id="_OpZO4JzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpZO4ZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpZ10JzKEe604LKE6vjj1A" name="Test_013_17_12_2023_07_46_50" developedFrom="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpZ10ZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-9120347827065377552" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpZ10pzKEe604LKE6vjj1A" startTime="184.90289907187125" endTime="198.93399640432904"/>
+      </operations>
+      <metrics xmi:id="_OpZ105zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpZ11JzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="14.03109733245779"/>
+      </metrics>
+      <metrics xmi:id="_OpZ11ZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpZ11pzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="151.562"/>
+      </metrics>
+      <metrics xmi:id="_OpZ115zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpZ12JzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="1.7930898742747432"/>
+      </metrics>
+      <metrics xmi:id="_OpZ12ZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpZ12pzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="2.1171993335147756"/>
+      </metrics>
+      <metrics xmi:id="_OpZ125zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpZ13JzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpZ13ZzKEe604LKE6vjj1A" name="Test_014_17_12_2023_07_46_50" developedFrom="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpZ13pzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="2199050853159637086" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpZ135zKEe604LKE6vjj1A" startTime="196.45237049518556" endTime="197.51763771782387"/>
+      </operations>
+      <metrics xmi:id="_OpZ14JzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpZ14ZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="1.0652672226383118"/>
+      </metrics>
+      <metrics xmi:id="_OpZ14pzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpZ145zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="156.163"/>
+      </metrics>
+      <metrics xmi:id="_OpZ15JzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpZ15ZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="1.8191470958897509"/>
+      </metrics>
+      <metrics xmi:id="_OpZ15pzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpZ155zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="2.060622862017466"/>
+      </metrics>
+      <metrics xmi:id="_OpZ16JzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpZ16ZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpZ16pzKEe604LKE6vjj1A" name="Test_015_17_12_2023_07_46_50" developedFrom="_OpWygJzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpZ165zKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-4125823232517749771" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpZ17JzKEe604LKE6vjj1A" startTime="82.85316747595436" endTime="198.54632439889713"/>
+      </operations>
+      <metrics xmi:id="_OpZ17ZzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpZ17pzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="115.69315692294276"/>
+      </metrics>
+      <metrics xmi:id="_Opac4JzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Opac4ZzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="269.558"/>
+      </metrics>
+      <metrics xmi:id="_Opac4pzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Opac45zKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1856722520836174"/>
+      </metrics>
+      <metrics xmi:id="_Opac5JzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Opac5ZzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.1095611043286775"/>
+      </metrics>
+      <metrics xmi:id="_Opac5pzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Opac55zKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Opac6JzKEe604LKE6vjj1A" name="Test_016_17_12_2023_07_46_50" developedFrom="_OpWygJzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_Opac6ZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="8717404123262724089" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_Opac6pzKEe604LKE6vjj1A" startTime="121.08134838473906" endTime="188.8693301591456"/>
+      </operations>
+      <metrics xmi:id="_Opac65zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Opac7JzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="67.78798177440653"/>
+      </metrics>
+      <metrics xmi:id="_Opac7ZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Opac7pzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="151.345"/>
+      </metrics>
+      <metrics xmi:id="_Opac75zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Opac8JzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1561722300388184"/>
+      </metrics>
+      <metrics xmi:id="_Opac8ZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Opac8pzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="3.74940267554151"/>
+      </metrics>
+      <metrics xmi:id="_Opac85zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Opac9JzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Opac9ZzKEe604LKE6vjj1A" name="Test_017_17_12_2023_08_29_43" developedFrom="_OpYApZzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_Opac9pzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="8717404123262724089" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_Opac95zKEe604LKE6vjj1A" startTime="170.55274192401788" endTime="198.35950882721542"/>
+      </operations>
+      <metrics xmi:id="_Opac-JzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Opac-ZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="27.80676690319754"/>
+      </metrics>
+      <metrics xmi:id="_Opac-pzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Opac-5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="157.097"/>
+      </metrics>
+      <metrics xmi:id="_Opac_JzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Opac_ZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1894038658699473"/>
+      </metrics>
+      <metrics xmi:id="_Opac_pzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Opac_5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="3.4674726042753226"/>
+      </metrics>
+      <metrics xmi:id="_OpadAJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpadAZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpbD8JzKEe604LKE6vjj1A" name="Test_018_17_12_2023_08_29_43" developedFrom="_OpYApZzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpbD8ZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-4125823232517749771" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpbD8pzKEe604LKE6vjj1A" startTime="82.85316747595436" endTime="198.54632439889713"/>
+      </operations>
+      <metrics xmi:id="_OpbD85zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpbD9JzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="115.69315692294276"/>
+      </metrics>
+      <metrics xmi:id="_OpbD9ZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpbD9pzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="203.258"/>
+      </metrics>
+      <metrics xmi:id="_OpbD95zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpbD-JzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1614279860924936"/>
+      </metrics>
+      <metrics xmi:id="_OpbD-ZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpbD-pzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109566618762087"/>
+      </metrics>
+      <metrics xmi:id="_OpbD-5zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpbD_JzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpbD_ZzKEe604LKE6vjj1A" name="Test_019_17_12_2023_08_29_43" developedFrom="_OpWLdJzKEe604LKE6vjj1A _OpU9WpzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpbD_pzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-176922634940543035" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpbD_5zKEe604LKE6vjj1A" startTime="179.55181945109786" endTime="182.9320925897728"/>
+      </operations>
+      <metrics xmi:id="_OpbEAJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpbEAZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="3.380273138674937"/>
+      </metrics>
+      <metrics xmi:id="_OpbEApzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpbEA5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="162.341"/>
+      </metrics>
+      <metrics xmi:id="_OpbEBJzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpbEBZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1924428647991046"/>
+      </metrics>
+      <metrics xmi:id="_OpbEBpzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpbEB5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="3.91663016527513"/>
+      </metrics>
+      <metrics xmi:id="_OpbECJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpbECZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpbECpzKEe604LKE6vjj1A" name="Test_020_17_12_2023_08_29_43" developedFrom="_OpWLdJzKEe604LKE6vjj1A _OpU9WpzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpbEC5zKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-9120347827065377552" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpbEDJzKEe604LKE6vjj1A" startTime="106.60588025918295" endTime="162.88703545602115"/>
+      </operations>
+      <metrics xmi:id="_OpbrAJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpbrAZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="10000.0"/>
+      </metrics>
+      <metrics xmi:id="_OpbrApzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpbrA5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics xmi:id="_OpbrBJzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpbrBZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_OpbrBpzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpbrB5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_OpbrCJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpbrCZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpbrCpzKEe604LKE6vjj1A" name="Test_021_17_12_2023_08_29_43" developedFrom="_OpVkaJzKEe604LKE6vjj1A _OpWLdJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpbrC5zKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="2199050853159637086" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpbrDJzKEe604LKE6vjj1A" startTime="187.46006156222336" endTime="196.15568073283163"/>
+      </operations>
+      <metrics xmi:id="_OpbrDZzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpbrDpzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="8.695619170608268"/>
+      </metrics>
+      <metrics xmi:id="_OpbrD5zKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpbrEJzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="154.95"/>
+      </metrics>
+      <metrics xmi:id="_OpbrEZzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpbrEpzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="1.408510267947092"/>
+      </metrics>
+      <metrics xmi:id="_OpbrE5zKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpbrFJzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="2.0505626542815274"/>
+      </metrics>
+      <metrics xmi:id="_OpbrFZzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpbrFpzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpbrF5zKEe604LKE6vjj1A" name="Test_022_17_12_2023_08_29_43" developedFrom="_OpVkaJzKEe604LKE6vjj1A _OpWLdJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpbrGJzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-176922634940543035" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpbrGZzKEe604LKE6vjj1A" startTime="103.50403901905032" endTime="164.94671302548454"/>
+      </operations>
+      <metrics xmi:id="_OpbrGpzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpbrG5zKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="61.44267400643422"/>
+      </metrics>
+      <metrics xmi:id="_OpbrHJzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpbrHZzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="268.234"/>
+      </metrics>
+      <metrics xmi:id="_OpbrHpzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpbrH5zKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1724182115097252"/>
+      </metrics>
+      <metrics xmi:id="_OpbrIJzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpbrIZzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109564365147984"/>
+      </metrics>
+      <metrics xmi:id="_OpbrIpzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpcSEJzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpcSEZzKEe604LKE6vjj1A" name="Test_023_17_12_2023_08_29_43" developedFrom="_OpZO1ZzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpcSEpzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-6828098759400569101" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpcSE5zKEe604LKE6vjj1A" startTime="101.02801305072076" endTime="180.3006243268581"/>
+      </operations>
+      <metrics xmi:id="_OpcSFJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpcSFZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="79.27261127613734"/>
+      </metrics>
+      <metrics xmi:id="_OpcSFpzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpcSF5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics xmi:id="_OpcSGJzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpcSGZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="3.3555692620224638"/>
+      </metrics>
+      <metrics xmi:id="_OpcSGpzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpcSG5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109562371626012"/>
+      </metrics>
+      <metrics xmi:id="_OpcSHJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpcSHZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpcSHpzKEe604LKE6vjj1A" name="Test_024_17_12_2023_08_29_43" developedFrom="_OpZO1ZzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpcSH5zKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="8717404123262724089" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpcSIJzKEe604LKE6vjj1A" startTime="128.77469489556984" endTime="169.81323057701056"/>
+      </operations>
+      <metrics xmi:id="_OpcSIZzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpcSIpzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="41.03853568144072"/>
+      </metrics>
+      <metrics xmi:id="_OpcSI5zKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpcSJJzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="163.3"/>
+      </metrics>
+      <metrics xmi:id="_OpcSJZzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpcSJpzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.157067498145172"/>
+      </metrics>
+      <metrics xmi:id="_OpcSJ5zKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpcSKJzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109482796638146"/>
+      </metrics>
+      <metrics xmi:id="_OpcSKZzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpcSKpzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpcSK5zKEe604LKE6vjj1A" name="Test_025_17_12_2023_09_12_37" developedFrom="_OpVkaJzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpcSLJzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="2199050853159637086" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpcSLZzKEe604LKE6vjj1A" startTime="196.45237049518556" endTime="197.51763771782387"/>
+      </operations>
+      <metrics xmi:id="_Opc5IJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Opc5IZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="1.0652672226383118"/>
+      </metrics>
+      <metrics xmi:id="_Opc5IpzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Opc5I5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="210.072"/>
+      </metrics>
+      <metrics xmi:id="_Opc5JJzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Opc5JZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1839458015414803"/>
+      </metrics>
+      <metrics xmi:id="_Opc5JpzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Opc5J5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="5.109563096185672"/>
+      </metrics>
+      <metrics xmi:id="_Opc5KJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Opc5KZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Opc5KpzKEe604LKE6vjj1A" name="Test_026_17_12_2023_09_12_37" developedFrom="_OpVkaJzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_Opc5K5zKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-4125823232517749771" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_Opc5LJzKEe604LKE6vjj1A" startTime="177.4250057054653" endTime="192.15140034920702"/>
+      </operations>
+      <metrics xmi:id="_Opc5LZzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Opc5LpzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="14.726394643741713"/>
+      </metrics>
+      <metrics xmi:id="_Opc5L5zKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Opc5MJzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="163.929"/>
+      </metrics>
+      <metrics xmi:id="_Opc5MZzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_Opc5MpzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.1630653472476555"/>
+      </metrics>
+      <metrics xmi:id="_Opc5M5zKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_Opc5NJzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="3.4345576463193783"/>
+      </metrics>
+      <metrics xmi:id="_Opc5NZzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_Opc5NpzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_Opc5N5zKEe604LKE6vjj1A" name="Test_027_17_12_2023_09_12_37" developedFrom="_OpbD8JzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_Opc5OJzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-4125823232517749771" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_Opc5OZzKEe604LKE6vjj1A" startTime="134.32266057876484" endTime="166.8096311193593"/>
+      </operations>
+      <metrics xmi:id="_Opc5OpzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_Opc5O5zKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="32.486970540594456"/>
+      </metrics>
+      <metrics xmi:id="_Opc5PJzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_Opc5PZzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="150.297"/>
+      </metrics>
+      <metrics xmi:id="_Opc5PpzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpdgMJzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.165961179251064"/>
+      </metrics>
+      <metrics xmi:id="_OpdgMZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpdgMpzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="4.670166661599339"/>
+      </metrics>
+      <metrics xmi:id="_OpdgM5zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpdgNJzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpdgNZzKEe604LKE6vjj1A" name="Test_028_17_12_2023_09_12_37" developedFrom="_OpbD8JzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpdgNpzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="8717404123262724089" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpdgN5zKEe604LKE6vjj1A" startTime="153.33622855887478" endTime="191.9672854785943"/>
+      </operations>
+      <metrics xmi:id="_OpdgOJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpdgOZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="38.631056919719526"/>
+      </metrics>
+      <metrics xmi:id="_OpdgOpzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpdgO5zKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="160.334"/>
+      </metrics>
+      <metrics xmi:id="_OpdgPJzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpdgPZzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.159997858378187"/>
+      </metrics>
+      <metrics xmi:id="_OpdgPpzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpdgP5zKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="3.4304475613096836"/>
+      </metrics>
+      <metrics xmi:id="_OpdgQJzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpdgQZzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpdgQpzKEe604LKE6vjj1A" name="Test_029_17_12_2023_09_12_37" developedFrom="_OpU9WpzKEe604LKE6vjj1A _OpcSEZzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpdgQ5zKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-9120347827065377552" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpdgRJzKEe604LKE6vjj1A" startTime="155.12934512867986" endTime="190.02258243898058"/>
+      </operations>
+      <metrics xmi:id="_OpdgRZzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpdgRpzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="34.89323731030072"/>
+      </metrics>
+      <metrics xmi:id="_OpdgR5zKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpdgSJzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="156.884"/>
+      </metrics>
+      <metrics xmi:id="_OpdgSZzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpdgSpzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.189067317039733"/>
+      </metrics>
+      <metrics xmi:id="_OpdgS5zKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpdgTJzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="3.457548053613541"/>
+      </metrics>
+      <metrics xmi:id="_OpdgTZzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpdgTpzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpdgT5zKEe604LKE6vjj1A" name="Test_030_17_12_2023_09_12_37" developedFrom="_OpU9WpzKEe604LKE6vjj1A _OpcSEZzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpeHQJzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-6828098759400569101" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpeHQZzKEe604LKE6vjj1A" startTime="123.93414568283215" endTime="169.0559812602575"/>
+      </operations>
+      <metrics xmi:id="_OpeHQpzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpeHQ5zKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="45.12183557742536"/>
+      </metrics>
+      <metrics xmi:id="_OpeHRJzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpeHRZzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="158.251"/>
+      </metrics>
+      <metrics xmi:id="_OpeHRpzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpeHR5zKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="2.2095200195927047"/>
+      </metrics>
+      <metrics xmi:id="_OpeHSJzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpeHSZzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="3.459210317324336"/>
+      </metrics>
+      <metrics xmi:id="_OpeHSpzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpeHS5zKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpeHTJzKEe604LKE6vjj1A" name="Test_031_17_12_2023_09_12_37" developedFrom="_OpbECpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpeHTZzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="-9120347827065377552" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpeHTpzKEe604LKE6vjj1A" startTime="174.06208838680146" endTime="178.71053017967026"/>
+      </operations>
+      <metrics xmi:id="_OpeHT5zKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpeHUJzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="4.648441792868795"/>
+      </metrics>
+      <metrics xmi:id="_OpeHUZzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpeHUpzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="144.033"/>
+      </metrics>
+      <metrics xmi:id="_OpeHU5zKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpeHVJzKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="1.4771447928247852"/>
+      </metrics>
+      <metrics xmi:id="_OpeHVZzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpeHVpzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="2.0474385070132874"/>
+      </metrics>
+      <metrics xmi:id="_OpeHV5zKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpeHWJzKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_OpeHWZzKEe604LKE6vjj1A" name="Test_032_17_12_2023_09_12_37" developedFrom="_OpbECpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" xmi:id="_OpeHWpzKEe604LKE6vjj1A" name="failureTrigger" variableToAffect="_sw6EAGw6Ee6NTJHqpVnHDQ" fromTemplate="_26XpAJl5Ee6Cw-FOG_QDjw" seed="2199050853159637086" customProcessClass="injectFailureMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_OpeHW5zKEe604LKE6vjj1A" startTime="183.87994248739454" endTime="195.9728678846211"/>
+      </operations>
+      <metrics xmi:id="_OpeHXJzKEe604LKE6vjj1A" metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result xmi:id="_OpeHXZzKEe604LKE6vjj1A" name="fuzzingOperationTimes" value="12.092925397226566"/>
+      </metrics>
+      <metrics xmi:id="_OpeuUJzKEe604LKE6vjj1A" metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result xmi:id="_OpeuUZzKEe604LKE6vjj1A" name="M2_timeReachingTarget" value="158.529"/>
+      </metrics>
+      <metrics xmi:id="_OpeuUpzKEe604LKE6vjj1A" metric="_ayZEcHOXEe68xv21uncMBA">
+        <result xmi:id="_OpeuU5zKEe604LKE6vjj1A" name="M4_distanceFromHumanOmni" value="1.8104727866107653"/>
+      </metrics>
+      <metrics xmi:id="_OpeuVJzKEe604LKE6vjj1A" metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result xmi:id="_OpeuVZzKEe604LKE6vjj1A" name="M2_distanceFromHumanPMB2" value="2.103043423235734"/>
+      </metrics>
+      <metrics xmi:id="_OpeuVpzKEe604LKE6vjj1A" metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result xmi:id="_OpeuV5zKEe604LKE6vjj1A" name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+    </performedTests>
+    <resultSets xmi:id="_OpeuWJzKEe604LKE6vjj1A" name="FULL-17_12_2023_08_29_43-intermediate-16" status="INTERMEDIATE" results="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A _OpWygJzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A _OpZ16pzKEe604LKE6vjj1A _OpWLdJzKEe604LKE6vjj1A _OpZO1ZzKEe604LKE6vjj1A"/>
+    <resultSets xmi:id="_OpeuWZzKEe604LKE6vjj1A" name="NONDOM-17_12_2023_08_29_43-intermediate-16" status="INTERMEDIATE" results="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A _OpWygJzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A _OpZ16pzKEe604LKE6vjj1A _OpWLdJzKEe604LKE6vjj1A _OpZO1ZzKEe604LKE6vjj1A"/>
+    <resultSets xmi:id="_OpeuWpzKEe604LKE6vjj1A" name="FULL-17_12_2023_09_12_37-intermediate-24" status="INTERMEDIATE" results="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A _OpbD8JzKEe604LKE6vjj1A _OpbECpzKEe604LKE6vjj1A _OpbrCpzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A _OpcSEZzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A"/>
+    <resultSets xmi:id="_OpeuW5zKEe604LKE6vjj1A" name="NONDOM-17_12_2023_09_12_37-intermediate-24" status="INTERMEDIATE" results="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A _OpbD8JzKEe604LKE6vjj1A _OpbECpzKEe604LKE6vjj1A _OpbrCpzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A _OpcSEZzKEe604LKE6vjj1A _OpYApZzKEe604LKE6vjj1A"/>
+    <resultSets xmi:id="_OpeuXJzKEe604LKE6vjj1A" name="FULL-17_12_2023_09_55_32-intermediate-32" status="INTERMEDIATE" results="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A _OpbD8JzKEe604LKE6vjj1A _OpbECpzKEe604LKE6vjj1A _OpbrCpzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A _Opc5N5zKEe604LKE6vjj1A _OpdgNZzKEe604LKE6vjj1A"/>
+    <resultSets xmi:id="_OpeuXZzKEe604LKE6vjj1A" name="NONDOM-17_12_2023_09_55_32-intermediate-32" status="INTERMEDIATE" results="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A _OpbD8JzKEe604LKE6vjj1A _OpbECpzKEe604LKE6vjj1A _OpbrCpzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A _Opc5N5zKEe604LKE6vjj1A _OpdgNZzKEe604LKE6vjj1A"/>
+    <resultSets xmi:id="_OpeuXpzKEe604LKE6vjj1A" name="FULL-17_12_2023_09_55_32-final" results="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A _OpbD8JzKEe604LKE6vjj1A _OpbECpzKEe604LKE6vjj1A _OpbrCpzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A _Opc5N5zKEe604LKE6vjj1A _OpdgNZzKEe604LKE6vjj1A"/>
+    <resultSets xmi:id="_OpeuX5zKEe604LKE6vjj1A" name="NONDOM-17_12_2023_09_55_32-final" results="_OpU9WpzKEe604LKE6vjj1A _OpVkaJzKEe604LKE6vjj1A _OpbD8JzKEe604LKE6vjj1A _OpbECpzKEe604LKE6vjj1A _OpbrCpzKEe604LKE6vjj1A _OpZOyJzKEe604LKE6vjj1A _Opc5N5zKEe604LKE6vjj1A _OpdgNZzKEe604LKE6vjj1A"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_v5IjMpygEe604LKE6vjj1A" timeLimitSeconds="300"/>
+  </campaigns>
+  <campaigns xmi:id="_cuNNUJzKEe604LKE6vjj1A" name="scenario2-eddi" metrics="_elQPEGKhEe6npZ9UVoAbbA _OSSZ4HOXEe68xv21uncMBA _ayZEcHOXEe68xv21uncMBA _FfNY8HfwEe65loEPyPKKeg _WHv54JV7Ee6LodbHz5gkog _AaE6IJl5Ee6Cw-FOG_QDjw" includedOperations="_d--1wJwnEe6y4Y8p3y0PVw">
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_cuNNUZzKEe604LKE6vjj1A" populationSize="16" iterations="160"/>
+    <performedTests name="Test_001_18_12_2023_06_36_04">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-7405385066090178296" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="172.08179539910606" endTime="193.04021747863564"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="20.958422079529583"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="162.724"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.160404983304761"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.4366435712347956"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_002_18_12_2023_06_36_04">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="6347486480048824171" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="150.14591640499606" endTime="175.1856615786832"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="25.03974517368715"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="190.088"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1857523752182297"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.4267012893932476"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_003_18_12_2023_06_36_04">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-7939487993448065983" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="134.78902169317257" endTime="143.05942267619383"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="8.270400983021261"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="175.83"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1816303952756533"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.4503365185946184"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_004_18_12_2023_06_36_04">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-5021104421380247270" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="85.1994685650068" endTime="92.83442816381216"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="7.6349595988053665"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="249.688"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1834456789690555"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109567419121546"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_005_18_12_2023_06_36_04">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-1228955252005230495" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="85.42488724426109" endTime="97.75723719427981"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="12.332349950018724"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="3.3555689299472204"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109562851553092"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="3.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_006_18_12_2023_06_36_04">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="4346005077239653322" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="130.02580160413345" endTime="155.29838871221702"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="25.27258710808357"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="294.373"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.2975855014092867"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.503226430962402"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_007_18_12_2023_06_36_04">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-958983166338362097" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="199.1675503957357" endTime="199.81569537282058"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="0.6481449770848826"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="174.48"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.196765754391152"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.4627793699229805"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_008_18_12_2023_06_36_04">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-39160451922784748" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="150.74206979316014" endTime="165.5062040325575"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="14.76413423939735"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="189.761"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.2011193086391763"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="4.010707465224907"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="7.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_009_18_12_2023_07_19_01" developedFrom="//@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.4">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="6347486480048824171" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="145.20984128188644" endTime="198.93157248996437"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="53.72173120807793"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="256.187"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.195856059356177"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109480605241075"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_010_18_12_2023_07_19_01" developedFrom="//@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.4">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-1228955252005230495" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="199.9348728803422" endTime="199.9363977451893"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="0.0015248648471128945"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="149.415"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1755426339586337"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="2.1315871202282985"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="10.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_011_18_12_2023_07_19_01" developedFrom="//@campaigns.4/@performedTests.7 //@campaigns.4/@performedTests.3">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-39160451922784748" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="150.74206979316014" endTime="165.5062040325575"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="14.76413423939735"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="189.893"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1748296461776286"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.446327856854018"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_012_18_12_2023_07_19_01" developedFrom="//@campaigns.4/@performedTests.7 //@campaigns.4/@performedTests.3">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-5021104421380247270" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="84.6870692491466" endTime="127.08986521241675"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="42.40279596327015"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="104.075"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.189385844943355"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.1095634566137536"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_013_18_12_2023_07_19_01" developedFrom="//@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="4346005077239653322" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="107.55282207833153" endTime="134.32413242924284"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="26.771310350911307"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="180.768"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1666611756627394"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109480734736311"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_014_18_12_2023_07_19_01" developedFrom="//@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-958983166338362097" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="136.44381583748606" endTime="191.2592879950366"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="54.815472157550545"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="209.336"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1430737992950233"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.44348574193928"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_015_18_12_2023_07_19_01" developedFrom="//@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.1">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-1228955252005230495" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="85.42488724426109" endTime="97.75723719427981"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="12.332349950018724"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="3.3555691509216063"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109566272033299"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="3.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_016_18_12_2023_07_19_01" developedFrom="//@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.1">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="6347486480048824171" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="83.53618570727102" endTime="92.47937359548808"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="8.943187888217068"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="3.355568967743262"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109482752439218"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_017_18_12_2023_08_01_58" developedFrom="//@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.3">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="6347486480048824171" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="150.14591640499606" endTime="175.1856615786832"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="25.03974517368715"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.493405308659917"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.4245946542631"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_018_18_12_2023_08_01_58" developedFrom="//@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.3">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-5021104421380247270" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="160.68204401167674" endTime="180.3219327792151"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="19.639888767538366"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="141.952"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1660245671180407"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.4154662743152184"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_019_18_12_2023_08_01_58" developedFrom="//@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.7">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-1228955252005230495" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="124.69863831533073" endTime="160.20106732180028"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="35.502429006469555"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="197.041"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1668586022375"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109562184026622"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_020_18_12_2023_08_01_58" developedFrom="//@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.7">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-39160451922784748" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="110.50634439147797" endTime="188.4610526290516"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="77.95470823757364"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="222.009"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1802345913450765"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109562914898018"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_021_18_12_2023_08_01_58" developedFrom="//@campaigns.4/@performedTests.7 //@campaigns.4/@performedTests.1">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-39160451922784748" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="196.18606629618836" endTime="197.4397729489202"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="1.253706652731836"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="165.541"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="1.4833778615492974"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="2.1593552896480506"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_022_18_12_2023_08_01_58" developedFrom="//@campaigns.4/@performedTests.7 //@campaigns.4/@performedTests.1">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="6347486480048824171" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="109.11481787859321" endTime="171.0845808292994"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="10000.0"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="219.803"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.162655581447076"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.10956323441755"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_023_18_12_2023_08_01_58" developedFrom="//@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-1228955252005230495" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="85.42488724426109" endTime="97.75723719427981"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="12.332349950018724"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="3.3555689987121897"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109484467595022"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="3.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_024_18_12_2023_08_01_58" developedFrom="//@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="4346005077239653322" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="120.0652462280679" endTime="145.36438726652855"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="25.299141038460647"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="257.594"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.187244040975954"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109567553138176"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="3.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_025_18_12_2023_08_44_57" developedFrom="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.7">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-7405385066090178296" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="183.86975390645563" endTime="195.64329399421587"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="11.773540087760239"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="159.882"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1859612088592093"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="2.1066793264864083"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_026_18_12_2023_08_44_57" developedFrom="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.7">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-39160451922784748" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="181.57764862932862" endTime="199.7516732693855"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="18.17402464005687"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="149.869"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="1.5100492413818836"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="2.1822749333721885"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_027_18_12_2023_08_44_57" developedFrom="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.5">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-7405385066090178296" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="172.08179539910606" endTime="193.04021747863564"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="20.958422079529583"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="153.972"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1857398767373066"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.441037095783741"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="4.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_028_18_12_2023_08_44_57" developedFrom="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.5">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="4346005077239653322" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="153.6919322858386" endTime="176.16477885791969"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="22.472846572081096"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="181.363"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1682615110005914"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.843329339781681"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_029_18_12_2023_08_44_57" developedFrom="//@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.0">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-1228955252005230495" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="107.3505926872811" endTime="191.18055005353094"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="83.82995736624984"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="237.973"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.168726599863038"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="5.109567132600192"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="3.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_030_18_12_2023_08_44_57" developedFrom="//@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.0">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-7405385066090178296" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="145.34775769699831" endTime="147.4968570346958"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="2.1490993376974927"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="100.0"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="3.355569061741236"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.4191385265000944"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="8.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_031_18_12_2023_08_44_57" developedFrom="//@campaigns.4/@performedTests.7">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-39160451922784748" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="150.74206979316014" endTime="165.5062040325575"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="14.76413423939735"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="147.619"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.184317287012543"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="3.4303506112541693"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="6.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_032_18_12_2023_08_44_57" developedFrom="//@campaigns.4/@performedTests.7">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="-39160451922784748" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="133.96692475151454" endTime="155.88156938788896"/>
+      </operations>
+      <metrics metric="_elQPEGKhEe6npZ9UVoAbbA">
+        <result name="fuzzingOperationTimes" value="21.91464463637442"/>
+      </metrics>
+      <metrics metric="_OSSZ4HOXEe68xv21uncMBA">
+        <result name="M2_timeReachingTarget" value="246.413"/>
+      </metrics>
+      <metrics metric="_ayZEcHOXEe68xv21uncMBA">
+        <result name="M4_distanceFromHumanOmni" value="2.1641385544868337"/>
+      </metrics>
+      <metrics metric="_FfNY8HfwEe65loEPyPKKeg">
+        <result name="M2_distanceFromHumanPMB2" value="4.457053770372299"/>
+      </metrics>
+      <metrics metric="_WHv54JV7Ee6LodbHz5gkog">
+        <result name="M1_countObjectsDelivered" value="5.0"/>
+      </metrics>
+      <metrics metric="_AaE6IJl5Ee6Cw-FOG_QDjw">
+        <result name="M3_decisionAlertSignal" value="100.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests name="Test_001_18_12_2023_10_52_18">
+      <operations xsi:type="TestingMM.FuzzingOperations:CustomFuzzingOperation" name="dosAttackTrigger" variableToAffect="_uZy9UHOhEe68xv21uncMBA" fromTemplate="_d--1wJwnEe6y4Y8p3y0PVw" seed="8581258770228062484" customProcessClass="injectDOSAttackMessage">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" startTime="82.40895012028741" endTime="190.92812705297865"/>
+      </operations>
+    </performedTests>
+    <resultSets name="FULL-18_12_2023_08_01_58-intermediate-16" status="INTERMEDIATE" results="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.2 //@campaigns.4/@performedTests.3 //@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6 //@campaigns.4/@performedTests.7"/>
+    <resultSets name="NONDOM-18_12_2023_08_01_58-intermediate-16" status="INTERMEDIATE" results="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.2 //@campaigns.4/@performedTests.3 //@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6 //@campaigns.4/@performedTests.7"/>
+    <resultSets name="FULL-18_12_2023_08_44_57-intermediate-24" status="INTERMEDIATE" results="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.2 //@campaigns.4/@performedTests.3 //@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6 //@campaigns.4/@performedTests.7"/>
+    <resultSets name="NONDOM-18_12_2023_08_44_57-intermediate-24" status="INTERMEDIATE" results="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.2 //@campaigns.4/@performedTests.3 //@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6 //@campaigns.4/@performedTests.7"/>
+    <resultSets name="FULL-18_12_2023_09_27_58-intermediate-32" status="INTERMEDIATE" results="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.2 //@campaigns.4/@performedTests.3 //@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6 //@campaigns.4/@performedTests.7"/>
+    <resultSets name="NONDOM-18_12_2023_09_27_58-intermediate-32" status="INTERMEDIATE" results="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.2 //@campaigns.4/@performedTests.3 //@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6 //@campaigns.4/@performedTests.7"/>
+    <resultSets name="FULL-18_12_2023_09_27_58-final" results="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.2 //@campaigns.4/@performedTests.3 //@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6 //@campaigns.4/@performedTests.7"/>
+    <resultSets name="NONDOM-18_12_2023_09_27_58-final" results="//@campaigns.4/@performedTests.0 //@campaigns.4/@performedTests.1 //@campaigns.4/@performedTests.2 //@campaigns.4/@performedTests.3 //@campaigns.4/@performedTests.4 //@campaigns.4/@performedTests.5 //@campaigns.4/@performedTests.6 //@campaigns.4/@performedTests.7"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_cuNO-pzKEe604LKE6vjj1A" timeLimitSeconds="300"/>
+  </campaigns>
+  <mrs xmi:id="_ejhz8GKlEe6npZ9UVoAbbA" launchFileLocation="/home/jharbin/academic/pal/run_pal_cuda_v6.sh" launchDelaySeconds="20">
+    <variables xmi:id="_sw6EAGw6Ee6NTJHqpVnHDQ" name="/pmb2_1/ground_truth_odom" type="_vjgjwGwUEe6ELdyKyNpbFQ"/>
+    <variables xmi:id="_6ig-kJkwEe6Cw-FOG_QDjw" name="/pmb2_1/conserts/forth/dos" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_eO2hkJllEe6Cw-FOG_QDjw" name="/pmb2_1/conserts/detection/certainty" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_zGM-AJkwEe6Cw-FOG_QDjw" name="/pmb2_1/pause_navigationIN" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_uZy9UHOhEe68xv21uncMBA" name="/pmb2_1/scan_raw" type="_7sM48G2KEe6NTJHqpVnHDQ"/>
+    <variables xmi:id="_Fd0xMJkTEe6Cw-FOG_QDjw" name="/pmb2_1/performance" type="_Z4HMgHOiEe68xv21uncMBA"/>
+    <variables xmi:id="_3n5EkHOhEe68xv21uncMBA" name="/pmb2_1/conserts/pal/loaded" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_rEOvsHOhEe68xv21uncMBA" name="/omni_base_1/ground_truth_odom" type="_vjgjwGwUEe6ELdyKyNpbFQ"/>
+    <variables xmi:id="_cRGkAG2KEe6NTJHqpVnHDQ" name="/omni_base_1/scan_raw" type="_7sM48G2KEe6NTJHqpVnHDQ"/>
+    <variables xmi:id="_5ZoH8HOhEe68xv21uncMBA" name="/omni_base_1/conserts/pal/loaded" type="_bll7MJZCEe6N_bLIooN25A"/>
+    <variables xmi:id="_yLhuQGKlEe6npZ9UVoAbbA" name="/tiago_1/ground_truth_odom" type="_vjgjwGwUEe6ELdyKyNpbFQ"/>
+    <variables xmi:id="_u_FIYG6CEe6upaW3FMquwA" name="/tiago_1/scan_raw" type="_7sM48G2KEe6NTJHqpVnHDQ"/>
+    <variables xmi:id="_tf8jIHbhEe6XHr8wNaxuXQ" name="/human1_location_ground_truth" type="_u5c0oGPFEe6tFd556H5rIA"/>
+    <nodes xmi:id="_tJySsGKlEe6npZ9UVoAbbA" name="tiago_1" publisher="_yLhuQGKlEe6npZ9UVoAbbA _u_FIYG6CEe6upaW3FMquwA"/>
+    <nodes xmi:id="_p2BAMGw6Ee6NTJHqpVnHDQ" name="pmb2_1" publisher="_sw6EAGw6Ee6NTJHqpVnHDQ _uZy9UHOhEe68xv21uncMBA"/>
+    <nodes xmi:id="_SGqhkG2QEe6NTJHqpVnHDQ" name="omni_base_1" publisher="_cRGkAG2KEe6NTJHqpVnHDQ _rEOvsHOhEe68xv21uncMBA"/>
+    <nodes xmi:id="__6t8oJxBEe6y4Y8p3y0PVw" name="extras" publisher="_zGM-AJkwEe6Cw-FOG_QDjw _Fd0xMJkTEe6Cw-FOG_QDjw"/>
+    <simulator xsi:type="TestingMM.MRSPackage:ROSSimulator" xmi:id="_wSX0QGKlEe6npZ9UVoAbbA" hostname="localhost" port="9090"/>
+    <propertyType xmi:id="_W0fm0GPFEe6tFd556H5rIA" name="linear">
+      <parameters xmi:id="_ZdaJ0GPFEe6tFd556H5rIA" name="X" type="_cWvHYGPFEe6tFd556H5rIA"/>
+      <parameters xmi:id="_belXYGPFEe6tFd556H5rIA" name="Y" type="_cWvHYGPFEe6tFd556H5rIA"/>
+      <parameters xmi:id="_ef1h4GPFEe6tFd556H5rIA" name="Z" type="_cWvHYGPFEe6tFd556H5rIA"/>
+    </propertyType>
+    <propertyType xmi:id="_cWvHYGPFEe6tFd556H5rIA" name="float64"/>
+    <propertyType xmi:id="_kHlNgGPFEe6tFd556H5rIA" name="geometry_msgs/Twist">
+      <parameters xmi:id="_mPTvAGPFEe6tFd556H5rIA" name="linear" type="_u5c0oGPFEe6tFd556H5rIA">
+        <subparameters xmi:id="_n8tsAGPFEe6tFd556H5rIA" name="X" type="_cWvHYGPFEe6tFd556H5rIA"/>
+        <subparameters xmi:id="_pO9-EGPFEe6tFd556H5rIA" name="Y" type="_cWvHYGPFEe6tFd556H5rIA"/>
+        <subparameters xmi:id="_qOceEGPFEe6tFd556H5rIA" name="Z" type="_cWvHYGPFEe6tFd556H5rIA"/>
+      </parameters>
+    </propertyType>
+    <propertyType xmi:id="_u5c0oGPFEe6tFd556H5rIA" name="geometry_msgs/Point"/>
+    <propertyType xmi:id="_vjgjwGwUEe6ELdyKyNpbFQ" name="nav_msgs/Odometry"/>
+    <propertyType xmi:id="_7sM48G2KEe6NTJHqpVnHDQ" name="sensor_msgs/LaserScan"/>
+    <propertyType xmi:id="_Z4HMgHOiEe68xv21uncMBA" name="String"/>
+    <propertyType xmi:id="_bll7MJZCEe6N_bLIooN25A" name="std_msgs/Bool"/>
+  </mrs>
+</TestingMM:TestingSpace>
