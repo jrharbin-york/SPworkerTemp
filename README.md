@@ -67,12 +67,26 @@ pyinstaller daemon.py
 ```
 
 ### Setup an SSH key and copy to experiment manager
-This is needed to synchronize the generated code with the experiment manager.
-The below command copies it onto the Docker container for the experiment manager...
+<<<<<<< HEAD
+This is needed to synchronize the generated code with the experiment manager
+The below command copies the key onto the Docker container for the experiment manager...
+
+This assumes the SSH server is on the default (SOPRANO alternative) port of 39222
+It will be if using the Docker for the experiment manager, if not, just use
+22 and your standard username on the experiment manager PC.
+
 ```
 ssh-keygen -t rsa
-ssh-copy-id -i ~/.ssh/id_rsa -p 39222 simtesting@192.168.1.28
+ssh-copy-id -i ~/.ssh/id_rsa -p 39222 simtesting@expt_manager_ip
 ```
+
+The default password will be "simtesting", unless changed during
+experiment manager Docker setup.
+
+Test that you can log properly into the experiment manager Docker as recommended by
+ssh-copy-id. After doing this, it is recommended that you set "PasswordAuthentication no"
+in /etc/ssh/sshd_config inside the experiment manager Docker.
+
 
 ### Before running experiment (PAL example)
 The Pyro nameserver is now set up on the experiment runner, not on a worker.

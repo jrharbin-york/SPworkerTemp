@@ -181,7 +181,7 @@ class TestRunJob:
         
     def resync(self):
         ssh_port = args.ssh_port
-        log.info("Resync SSH port " + str(ssh_port))
+        log.info("Resync command " + str(RESYNC_CMD))
         script_output = subprocess.call([RESYNC_CMD, REMOTE_CODE_PATH, LOCAL_RUN_PATH, ssh_port])
         log.info("Resync output:" + str(script_output))
         return script_output

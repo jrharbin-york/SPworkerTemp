@@ -1,4 +1,4 @@
-FROM cuda_v6_remapped_scanout
+FROM cuda_v6_fixedscript
 
 ARG VGL_GROUP_ID=1002
 ARG PAL_USER=user

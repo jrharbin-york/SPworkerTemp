@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <arg name="public_sim" default="false"/>
+    <arg name="map" default="$(env HOME)/kitchen_map"/>
+
+    <!-- Add TIAGo OMNI -->
+    <include file="$(find pmb2_multi)/launch/launch_pmb2_navigation.launch">
+        <arg name="robot_name" value="omni_base_1"/>
+        <arg name="x_pose" value="-5.372159481048584"/>
+        <arg name="y_pose" value="3.2726402282714844"/>
+        <arg name="public_sim" value="$(arg public_sim)"/>
+        <arg name="map" value="$(arg map)"/>
+    </include>
+
+<!--    <node name="human_location_publisher" pkg="sesame_demo" type="human_location_publisher.py" output="screen"/> -->
+    <node name="sesame_demo_node" pkg="sesame_demo" type="sesame_demo.py" output="screen"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(env HOME)/multi_tiago.rviz"/>
+
+</launch>
