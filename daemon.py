@@ -10,6 +10,8 @@ import sys
 import argparse
 import os
 import docker
+import tarfile
+import docker_container_manager
 
 log = structlog.get_logger()
 
@@ -100,6 +102,8 @@ REMOTE_CODE_DIRECTORY = "/home/" + args.expt_runner_user + "/shared-code/"
 REMOTE_LOGS_DIRECTORY = "/home/" + args.expt_runner_user + "/expt-logs/"
 REMOTE_CODE_PATH = args.expt_runner_user + "@" + args.expt_runner_ip + ":" + REMOTE_CODE_DIRECTORY
 
+CREATE_NEW_CONTAINER_LOCALLY = True
+
 # TODO: this needs to be supplied in the experiment config
 REMOTE_CONTAINER_REGISTRIES = {
     "docker" : "192.168.1.28:5000"
@@ -181,16 +185,20 @@ class TestRunJob:
         
     def resync(self):
         ssh_port = args.ssh_port
-        log.info("Resync SSH port " + str(ssh_port))
         script_output = subprocess.call([RESYNC_CMD, REMOTE_CODE_PATH, LOCAL_RUN_PATH, args.ssh_port])
         log.info("Resync output:" + str(script_output))
         return script_output
         
-    def prepare(self):
+    def prepare(self, container_manager):
         # TODO: do the resync of the directory here
         resync_output = self.resync()
         if (resync_output == 0):
-            return self.compile()
+            containers_output = container_manager.prepare_individual_test_containers(self)
+            if (containers_prepared == 0):
+                compile_output = self.compile()
+                return compile_output
+            else:
+                return containers_output
         else:
             return resync_output
 
@@ -207,10 +215,10 @@ class TestRunJob:
         log.info("Terminate output:" + str(script_output))
         return script_output
     
-    def handle(self):
+    def handle(self, container_manager):
         # Ensure the metrics are cleared before starting
         self.metric_values = {}
-        self.prepare()
+        self.prepare(container_manager)
         self.execute()
         self.terminate()
 
@@ -230,21 +238,6 @@ class TestRunJob:
 
 daemon = Pyro5.api.Daemon(host=args.worker_ip, port=args.worker_port)
 
-# TODO: superclass for different container types
-class DockerContainerManager:
-    def __init__(self):
-        self.docker_client = docker.from_env()
-        self.remote_repository = REMOTE_CONTAINER_REGISTRIES["docker"]
-        
-    def ensure_downloaded_container(self, container):
-        image_tag = self.remote_repository + "/" + container
-        log.info("Ensuring downloading of Docker image tag:" + image_tag)
-        image = self.docker_client.images.pull(image_tag)
-        return image
-
-    def ensure_downloaded_containers(self, containers):
-        for c in containers:
-            self.ensure_downloaded_container(c)
 
 class WorkManager:
     def __init__(self, name):
@@ -278,7 +271,10 @@ class WorkManager:
                 self.current_test_id = job.get_test_id()
                 self.set_job_status(job, TestStatusCodes.RUNNING)
                 # Need to check nothing else is running now!
-                job.handle()
+
+                # Needs to also ensure that they have a reference to the container manager
+                job.handle(self.container_manager)
+                
 		# block for a moment before testing again
                 self.set_job_status(job, TestStatusCodes.COMPLETED)
                 self.active_test = None
