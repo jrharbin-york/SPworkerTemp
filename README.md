@@ -95,12 +95,34 @@ killed during the terminate script after a particular test!
 
 * Ensure the IP of the experiment runner is set up in the model
 
+-----------------------------------------------------
+Sync these with todo.org
+
 ** Current errors:
 
 * TODO: there is still a hardcoded hostname in evolutionary.distributed/PyroDaemons.java
 * TODO: terminate.egl should not terminate all Docker containers if there is no Docker used - otherwise this kills a local experiment runner in a container
 * TODO: configurable path for the JVM? - at the moment it is hardcoded in compile.egl and execute.egl
+
 * TODO: with no metrics in the model, the generated code is invalid!
 * TODO: every metric must have IN stream, or code is invalid
+* TODO: every campaign must have metrics, or code is invalid
+
 * TODO: there is still a hardcoded hostname IP for the Pyro nameserver in the generated test runner
 
+* TODO: configurable Kafka path on the workers in clear_kafka.egl
+
+* TODO: RepeatedExection currently not working with distributed runner - evaluate() method needs to be rewritten
+* TODO: allocation wait in allocationLoop() in SOPRANOExperimentManager
+* TODO: sort order of allocated experiments?
+
+* TODO: stop() is never called for RemoteStatusMonitor - it should call it itself, once COMPELTED or FAILED is registered
+
+* TODO: fromTemplate not set for operations
+* TODO: in predictor; accumulateNormalisedParams sometimes doesn't work with iterator - why?
+
+* TODO: when running a RepeatedExectionTest - need to ensure all the previous results are cleared - otherwise, setting up the MetricConsumers will fail - INVALID_CAMPAIGN
+** TODO: can compensate by ensuring that the application changes are set up on the server
+
+* TODO: use a validation for the model to 
+* TODO: fixes and changes for the parameter setting experiments for ETERRY

@@ -13,6 +13,9 @@ import docker
 
 log = structlog.get_logger()
 
+# Pyro debugging
+#https://github.com/irmen/Pyro5/issues/20
+
 # Circus: https://circus.readthedocs.io/en/latest/for-devs/library/#library
 # Circus library can test e.g. the process status
 
@@ -128,6 +131,7 @@ class TestStatusCodes(IntEnum):
     PENDING = 1
     COMPLETED = 2
     FAILED = 3
+    UNKNOWN_TEST_ID = -1
 
 class MetricRegisterCode(IntEnum):
     OK = 0
@@ -178,7 +182,7 @@ class TestRunJob:
     def resync(self):
         ssh_port = args.ssh_port
         log.info("Resync SSH port " + str(ssh_port))
-        script_output = subprocess.call([RESYNC_CMD, REMOTE_CODE_PATH, LOCAL_RUN_PATH, ssh_port])
+        script_output = subprocess.call([RESYNC_CMD, REMOTE_CODE_PATH, LOCAL_RUN_PATH, args.ssh_port])
         log.info("Resync output:" + str(script_output))
         return script_output
         
@@ -288,7 +292,7 @@ class WorkManager:
         if urun_id in self.job_run_info:
             return self.job_run_info[urun_id]['status']
         else:
-            return None
+            return TestStatusCodes.UNKNOWN_TEST_ID
         
     def submit_test(self, j):
         self.pending_jobs.append(j)
@@ -303,7 +307,7 @@ class WorkManager:
     def terminate_experiment(self, expt_name_dsl, urun_id):
         # TODO: check if the urun_id matches first
         # Synchronising logs
-        script_output = subprocess.call([SYNC_LOGS_CMD, LOCAL_LOGS_PATH, REMOTE_LOGS_DIRECTORY, ssh_port])
+        script_output = subprocess.call([SYNC_LOGS_CMD, LOCAL_LOGS_PATH, REMOTE_LOGS_DIRECTORY, args.ssh_port])
         return script_output
 
     def register_experiment_completion(self, expt_id):
@@ -361,7 +365,7 @@ class SopranoWorkerDaemon(object):
 
     def terminate_experiment(self, expt_name_dsl, urun_id):
         log.warn("Exiting experiment" + expt_name_dsl)
-        jobmanager.terminate_experiment()
+        jobmanager.terminate_experiment(expt_name_dsl, urun_id)
 
     def submit_test(self, test_id):
         # Need to verify preconditions - e.g. are the classes/etc availble in the filesystem?
@@ -383,27 +387,31 @@ class SopranoWorkerDaemon(object):
     def get_all_metrics(self, target_test_id):
         return jobmanager.get_all_metrics(target_test_id)
 
-
 def try_register_ns(wd_uri):
     ns = Pyro5.core.locate_ns(host = args.expt_runner_ip, port = args.nameserver_port)
     log.info("SOPRANO Worker Daemon Ready: Object uri =" + str(wd_uri))       # print the uri so we can use it in the client later
-
     ns.register(pyro_daemon_full_name, wd_uri)
     log.info("Worker daemon registered with nameserver")
-
     daemon.requestLoop()                    # start the event loop of the server to wait for calls
 
 def register_classes():
     wd_uri = daemon.register(SopranoWorkerDaemon)
     return wd_uri
     
-def startup_loop():
-    wd_uri = register_classes()
-    while True:
-        try:
-            try_register_ns(wd_uri)
-        except Pyro5.errors.NamingError:
-            log.info("Could not connect to nameserver... will retry in " + str(CONNECTION_FAILURE_RETRY_TIME) + " seconds")
-            time.sleep(CONNECTION_FAILURE_RETRY_TIME)
-            
-startup_loop()
+#def startup_loop():
+#    wd_uri = register_classes()
+#    try:
+#        while True:
+#            try:
+#                try_register_ns(wd_uri)
+#            except Pyro5.errors.NamingError:
+#                log.info("Could not connect to nameserver... will retry in " + str(CONNECTION_FAILURE_RETRY_TIME) + " seconds")
+#                time.sleep(CONNECTION_FAILURE_RETRY_TIME)
+#    except KeyboardInterrupt:
+#        log.warn("Exiting upon keyboard interrupt")
+#        exit(0);
+
+#startup_loop()
+
+wd_uri = register_classes()
+try_register_ns(wd_uri)
