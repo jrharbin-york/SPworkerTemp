@@ -10,16 +10,18 @@ log = structlog.get_logger()
 
 # TODO: superclass for different container types
 
-LOCAL_STATICFILE_PATH="/home/jharbin/academic/soprano/SPworkerTemp/soprano_code/static-var-modified"
+STATICFILE_EXTRA_PATH = "./static-var-modified"
 
 REMOTE_CONTAINER_REGISTRIES = {
     "docker" : "192.168.1.28:5000"
 }
 
 class DockerContainerManager:
-    def __init__(self):
+    def __init__(self, local_run_path):
         self.docker_client = docker.from_env()
         self.remote_repository = REMOTE_CONTAINER_REGISTRIES["docker"]
+        self.local_run_path = local_run_path
+        self.local_staticfile_path = local_run_path + STATICFILE_EXTRA_PATH
         
     def ensure_downloaded_container(self, container):
         image_tag = self.remote_repository + "/" + container
@@ -86,7 +88,7 @@ class DockerContainerManager:
         # TODO: what is the testID?
         repo_id = "test"
         log.info("Preparing additional images for test " + test_id)
-        custom_dir_for_test = LOCAL_STATICFILE_PATH + "/" + test_id
+        custom_dir_for_test = self.local_staticfile_path + "/" + test_id
         # For every custom container dir in the test
         for src_image_name in os.listdir(custom_dir_for_test):
             log.info("Preparing additional image for test " + test_id + " : image " + src_image_name)
@@ -94,8 +96,8 @@ class DockerContainerManager:
             self.system_copy_files_into_image(source_dir, src_image_name, test_id)
         # Copy an existing image out into a new one
 
-def test():
-    dc = DockerContainerManager()
-    dc.prepare_individual_test_image("Test_001")
-    
-test()
+#def test():
+#    dc = DockerContainerManager()
+#    dc.prepare_individual_test_image("Test_001")
+#
+#test()

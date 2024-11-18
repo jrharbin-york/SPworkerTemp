@@ -11,7 +11,7 @@ import argparse
 import os
 import docker
 import tarfile
-import docker_container_manager
+from docker_container_manager import DockerContainerManager
 
 log = structlog.get_logger()
 
@@ -149,7 +149,7 @@ class ExptConfig:
         self.expt_name = expt_name
         self.unique_run_id = str(uuid.uuid4())
         self.dependencies = dependency_spec
-        self.container_manager = DockerContainerManager()
+        self.container_manager = DockerContainerManager(LOCAL_RUN_PATH)
 
     def pre_init_check(self):
         log.info("Pre-initialising checks for experiment: " + str(self))
@@ -245,7 +245,7 @@ class WorkManager:
         self.watcher = threading.Thread(target=self.watch_job_queue, name="WorkManagerWatcher", daemon=True)
         self.current_expt = {}
         self.active_test = None
-        self.container_manager = DockerContainerManager()
+        self.container_manager = DockerContainerManager(LOCAL_RUN_PATH)
 
         # This maps the job unqiue run ID to a hash of info
         self.job_run_info = {}
