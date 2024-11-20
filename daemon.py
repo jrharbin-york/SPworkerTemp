@@ -193,8 +193,8 @@ class TestRunJob:
         # TODO: do the resync of the directory here
         resync_output = self.resync()
         if (resync_output == 0):
-            containers_output = container_manager.prepare_individual_test_containers(self)
-            if (containers_prepared == 0):
+            containers_prepared_output = container_manager.prepare_individual_test_containers(self)
+            if (containers_prepared_output == 0):
                 compile_output = self.compile()
                 return compile_output
             else:
