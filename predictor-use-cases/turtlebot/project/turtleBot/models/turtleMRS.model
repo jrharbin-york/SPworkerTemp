@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TestingMM:TestingSpace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TestingMM="TestingMM" xmlns:TestingMM.Execution="Execution" xmlns:TestingMM.FuzzingOperations="FuzzingOperations" xmlns:TestingMM.MRSPackage="MRSPackage" xmlns:TestingMM.Metrics="Metrics" xmi:id="_VMYbMGKhEe6npZ9UVoAbbA" name="turtleMRSDemo">
+  <metrics xsi:type="TestingMM.Metrics:FuzzingOperationTimesMetric" xmi:id="_V5eHUHZZEe--UbBGoUiFwA" name="fuzzingOperationTimes" dir="LOWEST" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_a1ShEHZZEe--UbBGoUiFwA" defaultVal="1000.0"/>
+    <initValue xmi:id="_YKRFQHZZEe--UbBGoUiFwA" defaultVal="1000.0"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_5oBHEHZcEe--UbBGoUiFwA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_fW5EAHZZEe--UbBGoUiFwA" name="distanceToPoint3D" relatedVariables="_-onDMCv_EeykGsd0UrLwGA" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_pHjFwHZZEe--UbBGoUiFwA" defaultVal="-1000.0"/>
+    <initValue xmi:id="_nx4TUHZZEe--UbBGoUiFwA" defaultVal="-1000.0"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_rGs6EHZZEe--UbBGoUiFwA"/>
+  </metrics>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_VixccHWGEe-u3qaJErQubA" name="distortVelocity" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_52pMQHWIEe-u3qaJErQubA" startTime="25.0" endTime="50.0"/>
+    <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_3Z2EkHWGEe-u3qaJErQubA" propertyName="msg.angular.z" randChoice="ALWAYS_HIGH" lowerBound="-0.5" upperBound="0.5"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_F20t0KTiEe-ifJwxzpsMZg" name="reverseVehicle" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_F20t0aTiEe-ifJwxzpsMZg" startTime="25.0" endTime="50.0"/>
+    <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_F20t0qTiEe-ifJwxzpsMZg" propertyName="msg.linear.x" randChoice="ALWAYS_LOW" lowerBound="-0.2" upperBound="-0.2"/>
+  </possibleFuzzingOperations>
+  <campaigns xmi:id="_NglHoHWGEe-u3qaJErQubA" name="validatePredictor" metrics="_V5eHUHZZEe--UbBGoUiFwA _fW5EAHZZEe--UbBGoUiFwA" includedOperations="_VixccHWGEe-u3qaJErQubA">
+    <activationGeneration xsi:type="TestingMM:TimeBasedActivationGenerationMethod" xmi:id="_PG8BcHWGEe-u3qaJErQubA"/>
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_QBHKsHWGEe-u3qaJErQubA" populationSize="1" iterations="1"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="__HxHoHWIEe-u3qaJErQubA" timeLimitSeconds="50"/>
+  </campaigns>
+  <campaigns xmi:id="_mMTTQKJkEe-g-auCzqDGyw" name="savedConfigurations" metrics="_V5eHUHZZEe--UbBGoUiFwA _fW5EAHZZEe--UbBGoUiFwA" includedOperations="_VixccHWGEe-u3qaJErQubA">
+    <activationGeneration xsi:type="TestingMM:TimeBasedActivationGenerationMethod" xmi:id="_mMTTQaJkEe-g-auCzqDGyw"/>
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_mMTTQqJkEe-g-auCzqDGyw" populationSize="1" iterations="1"/>
+    <performedTests xmi:id="_mMT7_aJkEe-g-auCzqDGyw" name="Test_173_08_11_2024_10_07_43">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_mMT7_qJkEe-g-auCzqDGyw" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_mMT7_6JkEe-g-auCzqDGyw" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_mMT8AKJkEe-g-auCzqDGyw" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_mMT8AaJkEe-g-auCzqDGyw" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_mMT8AqJkEe-g-auCzqDGyw" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_mMT8A6JkEe-g-auCzqDGyw" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_mMT8BKJkEe-g-auCzqDGyw" name="distanceToPoint3D" value="1.2177510998945908"/>
+      </metrics>
+    </performedTests>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_mMT-vaJkEe-g-auCzqDGyw" timeLimitSeconds="50"/>
+  </campaigns>
+  <campaigns xmi:id="_ah2o4KJlEe-g-auCzqDGyw" name="repeat173" metrics="_V5eHUHZZEe--UbBGoUiFwA _fW5EAHZZEe--UbBGoUiFwA" includedOperations="_VixccHWGEe-u3qaJErQubA">
+    <approach xsi:type="TestingMM:RepeatedExecution" xmi:id="_cvygEKJlEe-g-auCzqDGyw" testToRepeat="_mMT7_aJkEe-g-auCzqDGyw" repeatCount="30"/>
+    <performedTests xmi:id="_ATjvAKThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat0">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATjvAaThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATjvAqThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATjvA6ThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATjvBKThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATjvBaThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATjvBqThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATjvB6ThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.21508722659501592"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATjvCKThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat1">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATkWEKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATkWEaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATkWEqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATkWE6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATkWFKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATkWFaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATkWFqThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="3.16222046874292"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATkWF6ThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat2">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATkWGKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATkWGaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATkWGqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATkWG6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATkWHKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATkWHaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATkWHqThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.21807740865649988"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATkWH6ThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat3">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATkWIKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATkWIaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATkWIqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATkWI6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATkWJKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATkWJaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATk9IKThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.2352341425358278"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATk9IaThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat4">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATk9IqThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATk9I6ThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATk9JKThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATk9JaThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATk9JqThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATk9J6ThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATk9KKThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22699908908667862"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATk9KaThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat5">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATk9KqThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATk9K6ThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATk9LKThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATk9LaThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATk9LqThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATk9L6ThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATk9MKThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.24262337235503617"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATk9MaThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat6">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATlkMKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATlkMaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATlkMqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATlkM6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATlkNKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATlkNaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATlkNqThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22647868710938623"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATlkN6ThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat7">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATlkOKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATlkOaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATlkOqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATlkO6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATlkPKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATlkPaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATlkPqThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.21797003864266942"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATlkP6ThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat8">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATlkQKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATlkQaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATlkQqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATlkQ6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATlkRKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATlkRaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATlkRqThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.226106214498347"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATlkR6ThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat9">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATlkSKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATmLQKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATmLQaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATmLQqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmLQ6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATmLRKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmLRaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.23156032252313266"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATmLRqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat10">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATmLR6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATmLSKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATmLSaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATmLSqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmLS6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATmLTKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmLTaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22705431349101515"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATmLTqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat11">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATmLT6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATmLUKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATmLUaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATmLUqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmLU6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATmLVKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmLVaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22914246251653403"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATmLVqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat12">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATmLV6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATmyUKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATmyUaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATmyUqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmyU6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATmyVKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmyVaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22060308917644195"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATmyVqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat13">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATmyV6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATmyWKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATmyWaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATmyWqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmyW6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATmyXKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmyXaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.2379939718897358"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATmyXqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat14">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATmyX6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATmyYKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATmyYaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATmyYqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmyY6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATmyZKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATmyZaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.23332076418711603"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATmyZqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat15">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATmyZ6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATnZYKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATnZYaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATnZYqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATnZY6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATnZZKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATnZZaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.2277583176126119"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATnZZqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat16">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATnZZ6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATnZaKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATnZaaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATnZaqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATnZa6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATnZbKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATnZbaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22710338361178248"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATnZbqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat17">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATnZb6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATnZcKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATnZcaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATnZcqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATnZc6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATnZdKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATnZdaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22132437793505924"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATnZdqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat18">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATnZd6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_AToAcKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_AToAcaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_AToAcqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_AToAc6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_AToAdKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_AToAdaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.23035738909860878"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_AToAdqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat19">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_AToAd6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_AToAeKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_AToAeaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_AToAeqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_AToAe6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_AToAfKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_AToAfaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.23574938432070935"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_AToAfqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat20">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_AToAf6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_AToAgKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_AToAgaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_AToAgqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_AToAg6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_AToAhKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_AToAhaThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22248329730777686"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_AToAhqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat21">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATongKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATongaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATongqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATong6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATonhKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATonhaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATonhqThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.23280671569430192"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATonh6ThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat22">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_AToniKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_AToniaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_AToniqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_AToni6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATonjKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATonjaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATonjqThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="2.3500418186176"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATonj6ThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat23">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATonkKThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATonkaThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATonkqThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATonk6ThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATonlKThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATonlaThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATonlqThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22474123457722364"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATpOkKThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat24">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATpOkaThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATpOkqThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATpOk6ThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATpOlKThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATpOlaThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATpOlqThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATpOl6ThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="2.582316604204942"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATpOmKThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat25">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATpOmaThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATpOmqThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATpOm6ThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATpOnKThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATpOnaThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATpOnqThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATpOn6ThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.21740093232692762"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATpOoKThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat26">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATpOoaThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATpOoqThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATpOo6ThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATpOpKThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATpOpaThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATpOpqThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATpOp6ThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.22879756841191334"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATpOqKThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat27">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATpOqaThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATp1oKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATp1oaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATp1oqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATp1o6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_ATp1pKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATp1paThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="-1000.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATp1pqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat28">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATp1p6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATp1qKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATp1qaThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATp1qqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATp1q6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATp1rKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATp1raThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.21929145959602817"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_ATp1rqThEe-ifJwxzpsMZg" name="Test_173_08_11_2024_10_07_43_repeat29">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_ATp1r6ThEe-ifJwxzpsMZg" name="distortVelocity" fromTemplate="_VixccHWGEe-u3qaJErQubA" seed="-1580559602121339651" variableToAffect="_ayhwsCv_EeykGsd0UrLwGA">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_ATp1sKThEe-ifJwxzpsMZg" startTime="49.14546771083438" endTime="49.52164743859236"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_ATp1saThEe-ifJwxzpsMZg" propertyName="msg.angular.z" lowerBound="0.21784583066479335" upperBound="0.38688070743205144"/>
+      </operations>
+      <metrics xmi:id="_ATp1sqThEe-ifJwxzpsMZg" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATp1s6ThEe-ifJwxzpsMZg" name="fuzzingOperationTimes" value="0.3761797277579788"/>
+      </metrics>
+      <metrics xmi:id="_ATp1tKThEe-ifJwxzpsMZg" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_ATp1taThEe-ifJwxzpsMZg" name="distanceToPoint3D" value="0.21667976137043288"/>
+      </metrics>
+    </performedTests>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_eTIiIKJlEe-g-auCzqDGyw" timeLimitSeconds="50"/>
+  </campaigns>
+  <mrs xmi:id="_Z4M2cCv_EeykGsd0UrLwGA" launchDelaySeconds="10" launchFileLocation="/home/jharbin/academic/soprano/turtlebot/docker/run_turtlebot.sh">
+    <variables xsi:type="TestingMM.MRSPackage:EventBasedVariable" xmi:id="_ayhwsCv_EeykGsd0UrLwGA" name="/cmd_vel_nav" type="_ksEosCv_EeykGsd0UrLwGA"/>
+    <variables xsi:type="TestingMM.MRSPackage:EventBasedVariable" xmi:id="_-onDMCv_EeykGsd0UrLwGA" name="/odom" type="_67hGYCv_EeykGsd0UrLwGA"/>
+    <nodes xmi:id="_gZyUICv_EeykGsd0UrLwGA" name="Turtle1" subscriber="_ayhwsCv_EeykGsd0UrLwGA" publisher="_-onDMCv_EeykGsd0UrLwGA"/>
+    <nodes xmi:id="_iHhnwJSLEeyi3puJ8GqOAQ" name="teleop_key" publisher="_ayhwsCv_EeykGsd0UrLwGA"/>
+    <simulator xsi:type="TestingMM.MRSPackage:ROSSimulator" xmi:id="_mtRLoEXuEeybjfS_xnSIvQ" hostname="0.0.0.0" port="9090"/>
+    <propertyType xmi:id="_ksEosCv_EeykGsd0UrLwGA" name="geometry_msgs/msg/Twist">
+      <parameters xmi:id="_l2jiACwDEeykGsd0UrLwGA" name="linear" type="_QNs_sCwCEeykGsd0UrLwGA">
+        <subparameters xmi:id="_VBnvwCwEEeykGsd0UrLwGA" name="X" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_YR7C4CwEEeykGsd0UrLwGA" name="Y" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_aLGLACwEEeykGsd0UrLwGA" name="Z" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+      </parameters>
+      <parameters xmi:id="_ucOYgCwdEeykGsd0UrLwGA" name="angular" type="_QNs_sCwCEeykGsd0UrLwGA">
+        <subparameters xmi:id="_xgR_YCwdEeykGsd0UrLwGA" name="X" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_xgR_YSwdEeykGsd0UrLwGA" name="Y" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_xgR_YiwdEeykGsd0UrLwGA" name="Z" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+      </parameters>
+    </propertyType>
+    <propertyType xmi:id="_67hGYCv_EeykGsd0UrLwGA" name="nav_msgs/msg/Odometry">
+      <parameters xmi:id="_yR3CwCwcEeykGsd0UrLwGA" name="X" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+      <parameters xmi:id="_60-6YCwcEeykGsd0UrLwGA" name="Y" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+      <parameters xmi:id="_9P5doCwcEeykGsd0UrLwGA" name="theta" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+      <parameters xmi:id="_-V3AICwcEeykGsd0UrLwGA" name="linear_velocity" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+      <parameters xmi:id="_AKcjMCwdEeykGsd0UrLwGA" name="angular_velocity" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+    </propertyType>
+    <propertyType xmi:id="_QNs_sCwCEeykGsd0UrLwGA" name="Vector3"/>
+    <propertyType xmi:id="_XPV2cCwCEeykGsd0UrLwGA" name="float64"/>
+    <propertyType xmi:id="_0fIyoCwcEeykGsd0UrLwGA" name="float32"/>
+    <execStrategy xsi:type="TestingMM.Execution:DistributedExecutionStrategy" xmi:id="_zZ5SoHWFEe-u3qaJErQubA" automaticWorkerDetection="false" exptRunnerIP="192.168.1.238">
+      <extraExecutionTargets xsi:type="TestingMM.Execution:SOPRANOWorkerNode" xmi:id="_-OHDIHWFEe-u3qaJErQubA" ipAddress="192.168.1.238"/>
+      <allocationStrategy xsi:type="TestingMM.Execution:DynamicTaskAllocation" xmi:id="_MM-KsHWGEe-u3qaJErQubA"/>
+    </execStrategy>
+  </mrs>
+</TestingMM:TestingSpace>

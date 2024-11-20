@@ -1,0 +1,161 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>testAutoGen</groupId>
+  <artifactId>testAutoGen</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+       <!--   <release>17</release> -->
+       <source>11</source>
+       <target>11</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+	<dependencies>
+	
+	    <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+
+        
+	
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-streaming-java_2.11</artifactId>
+			<version>1.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.buildobjects</groupId>
+			<artifactId>jproc</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-file-sink-common</artifactId>
+			<version>1.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-connector-filesystem_2.12</artifactId>
+			<version>1.11.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-connector-files</artifactId>
+			<version>1.13.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.uma.jmetal</groupId>
+			<artifactId>jmetal-core</artifactId>
+			<version>5.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.uma.jmetal</groupId>
+			<artifactId>jmetal-exec</artifactId>
+			<version>5.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.uma.jmetal</groupId>
+			<artifactId>jmetal-lab</artifactId>
+			<version>5.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.uma.jmetal</groupId>
+			<artifactId>jmetal-algorithm</artifactId>
+			<version>5.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.uma.jmetal</groupId>
+			<artifactId>jmetal-auto</artifactId>
+			<version>5.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.epsilon</groupId>
+			<artifactId>org.eclipse.epsilon.egl.engine</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.epsilon</groupId>
+			<artifactId>org.eclipse.epsilon.egl.engine</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.epsilon</groupId>
+			<artifactId>org.eclipse.epsilon.emc.emf</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.core</groupId>
+			<artifactId>commands</artifactId>
+			<version>3.3.0-I20070605-0010</version>
+		</dependency>
+
+		<dependency>
+			<groupId>uk.ac.york.sesame.testing.dsl</groupId>
+			<artifactId>uk.ac.york.sesame.testing.dsl</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>uk.ac.york.sesame.testing.architecture</groupId>
+			<artifactId>uk.ac.york.sesame.testing.architecture</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>uk.ac.york.sesame.testing.architecture.ros</groupId>
+			<artifactId>uk.ac.york.sesame.testing.architecture.ros</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>uk.ac.york.sesame.testing.evolutionary</groupId>
+			<artifactId>uk.ac.york.sesame.testing.evolutionary</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.razorvine</groupId>
+			<artifactId>pyrolite</artifactId>
+			<version>5.1</version>
+		</dependency>
+
+	</dependencies>
+</project>
