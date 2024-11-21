@@ -22,6 +22,10 @@ class DockerContainerManager:
         self.remote_repository = REMOTE_CONTAINER_REGISTRIES["docker"]
         self.local_run_path = local_run_path
         self.local_staticfile_path = local_run_path + STATICFILE_EXTRA_PATH
+
+    def prepare_individual_test_containers(self, manager):
+        log.warn("TODO: ensure test containers are prepared")
+        return 0
         
     def ensure_downloaded_container(self, container):
         image_tag = self.remote_repository + "/" + container
