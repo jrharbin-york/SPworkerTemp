@@ -5,21 +5,19 @@ import tempfile
 import subprocess
 import tarfile
 import glob
+import time
 
 log = structlog.get_logger()
 
 # TODO: superclass for different container types
 
 STATICFILE_EXTRA_PATH = "./static-var-modified"
-
-REMOTE_CONTAINER_REGISTRIES = {
-    "docker" : "192.168.1.28:5000"
-}
+COMMIT_DELAY_SECS = 2
 
 class DockerContainerManager:
-    def __init__(self, local_run_path):
+    def __init__(self, local_run_path, remote_registry):
         self.docker_client = docker.from_env()
-        self.remote_repository = REMOTE_CONTAINER_REGISTRIES["docker"]
+        self.remote_repository = remote_registry
         self.local_run_path = local_run_path
         self.local_staticfile_path = local_run_path + STATICFILE_EXTRA_PATH
         
@@ -27,7 +25,7 @@ class DockerContainerManager:
         image_tag = self.remote_repository + "/" + container
         log.info("Ensuring downloading of Docker image tag:" + image_tag)
         image = self.docker_client.images.pull(image_tag)
-        return image
+        return image3
 
     def ensure_downloaded_containers(self, containers):
         for c in containers:
@@ -55,7 +53,8 @@ class DockerContainerManager:
         src_image = self.docker_client.images.get(src_image_name)
         temp_container = self.docker_client.containers.create(src_image_name)
         temp_container_id = temp_container.id
-        log.info("Examining source dir = " + src_dir)
+        temp_container.start()
+        log.debug("Examining source dir = " + src_dir)
         files_to_add = self.filepaths_walk(start_path=src_dir)
 
         if len(files_to_add) > 0:
@@ -64,25 +63,31 @@ class DockerContainerManager:
             tar = tarfile.open(temporary_tar_file, mode='w')
             for file in files_to_add:
                 log.debug("Adding modified file to archive: " + file)
-                # Need to also remove file from image - is there a better way to do with docker.py?
                 remove_cmd = "docker exec " + temp_container_id + " sh -c 'rm -f " + file + "'"
                 log.debug("Removing existing file with command: " + remove_cmd)
+                # Need to also remove file from image - is there a better way to do with docker_py?
                 os.system(remove_cmd)
+                log.debug("Removal command done")
                 tar.add(file)
             tar.close()
             tar_data_file = open(temporary_tar_file, 'rb')
             tar_data = tar_data_file.read()
-            log.debug("Adding temporary tar file at " + temporary_tar_file + " to the container " + str(temp_container))
-            # TODO: copying file into container - need to 
+            log.debug("Adding temporary tar file at " + temporary_tar_file + " to the container " + str(temp_container_id))
             temp_container.put_archive("/", tar_data)
             tar_data_file.close()
-            dst_image_name = src_image_name + ":" + dst_image_tag
-            log.debug("Commiting modified files back to the image at " + dst_image_name)
-            temp_container.commit(src_image_name, dst_image_tag)
+            # TODO: for now we assume the dest is the same as the source, but with a different tag
+            # this should be more flexible in the naming policy for newly created images
+            dst_image_name = src_image_name
+            dst_image_repo = dst_image_name + ":" + dst_image_tag
+            log.debug("Commiting modified files back to the image at " + dst_image_repo)
+            # Need to commit back the temporary files into the new image
+            temp_container.commit(dst_image_name, dst_image_tag)
+            time.sleep(COMMIT_DELAY_SECS)
+            log.debug("Removing temporary container...")
             temp_container.remove()
+            log.info("New simulation image creation completed at repository " + dst_image_repo)
         else:
             log.info("No files to add for test")
-            # Need to commit back the temporary files into the new image
         
     def prepare_individual_test_image(self, test_id):
         # TODO: what is the testID?
@@ -96,8 +101,3 @@ class DockerContainerManager:
             self.system_copy_files_into_image(source_dir, src_image_name, test_id)
         # Copy an existing image out into a new one
 
-#def test():
-#    dc = DockerContainerManager()
-#    dc.prepare_individual_test_image("Test_001")
-#
-#test()

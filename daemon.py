@@ -88,6 +88,12 @@ parser.add_argument("--ssh_port",
                     help="The SSH port on the remote worker",
                     default = "22")
 
+parser.add_argument("--docker_container_manager",
+                    dest="docker_container_manager",
+                    help="The IP:port of the container manager",
+                    default = "192.168.1.238:5000")
+
+
 args = parser.parse_args()
 
 node_name = args.worker_ip.replace(".", "_")
@@ -103,11 +109,6 @@ REMOTE_LOGS_DIRECTORY = "/home/" + args.expt_runner_user + "/expt-logs/"
 REMOTE_CODE_PATH = args.expt_runner_user + "@" + args.expt_runner_ip + ":" + REMOTE_CODE_DIRECTORY
 
 CREATE_NEW_CONTAINER_LOCALLY = True
-
-# TODO: this needs to be supplied in the experiment config
-REMOTE_CONTAINER_REGISTRIES = {
-    "docker" : "192.168.1.28:5000"
-}
 
 log.info("REMOTE_CODE_PATH: " + str(REMOTE_CODE_PATH))
 
@@ -125,6 +126,9 @@ EXPT_RUNNER_CMD = LOCAL_SCRIPT_PATH + "/execute.sh"
 TERMINATE_CMD = LOCAL_SCRIPT_PATH + "/terminate.sh"
 CLEANUP_CMD = LOCAL_SCRIPT_PATH + "/cleanup.sh"
 
+REMOTE_CONTAINER_MANAGERS = {
+    "docker" : DockerContainerManager(LOCAL_RUN_PATH, args.docker_container_manager)
+}
 
 class PreInitCheckCodes(IntEnum):
     DEPS_OK = 0
@@ -149,7 +153,7 @@ class ExptConfig:
         self.expt_name = expt_name
         self.unique_run_id = str(uuid.uuid4())
         self.dependencies = dependency_spec
-        self.container_manager = DockerContainerManager(LOCAL_RUN_PATH)
+        self.container_manager = REMOTE_CONTAINER_MANAGERS["docker"]
 
     def pre_init_check(self):
         log.info("Pre-initialising checks for experiment: " + str(self))
@@ -193,7 +197,7 @@ class TestRunJob:
         # TODO: do the resync of the directory here
         resync_output = self.resync()
         if (resync_output == 0):
-            containers_output = container_manager.prepare_individual_test_containers(self)
+            containers_output = container_manager.prepare_individual_test_image(self.test_id)
             if (containers_prepared == 0):
                 compile_output = self.compile()
                 return compile_output
@@ -245,7 +249,7 @@ class WorkManager:
         self.watcher = threading.Thread(target=self.watch_job_queue, name="WorkManagerWatcher", daemon=True)
         self.current_expt = {}
         self.active_test = None
-        self.container_manager = DockerContainerManager(LOCAL_RUN_PATH)
+        self.container_manager = REMOTE_CONTAINER_MANAGERS["docker"]
 
         # This maps the job unqiue run ID to a hash of info
         self.job_run_info = {}
