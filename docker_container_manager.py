@@ -25,7 +25,7 @@ class DockerContainerManager:
         image_tag = self.remote_repository + "/" + container
         log.info("Ensuring downloading of Docker image tag:" + image_tag)
         image = self.docker_client.images.pull(image_tag)
-        return image3
+        return image
 
     def ensure_downloaded_containers(self, containers):
         for c in containers:
@@ -46,6 +46,9 @@ class DockerContainerManager:
         files_and_dir = glob.glob(dest_path, recursive=True)
         files = filter((lambda fd: os.path.isfile(fd)), files_and_dir)
         return list(files)
+
+    def make_tar_relative_paths(self, tar_filename, src_dir):
+        subprocess.call(["tar", "-C", src_dir, "-cvf", tar_filename, "."])
         
     # https://stackoverflow.com/questions/46390309/how-to-copy-a-file-from-host-to-container-using-docker-py-docker-sdk
     def system_copy_files_into_image(self, src_dir, src_image_name, dst_image_tag):
@@ -53,6 +56,11 @@ class DockerContainerManager:
         src_image = self.docker_client.images.get(src_image_name)
         temp_container = self.docker_client.containers.create(src_image_name)
         temp_container_id = temp_container.id
+        # TODO: for now we assume the dest is the same as the source, but with a different tag
+        # this should be more flexible in the naming policy for newly created images
+        dst_image_name = src_image_name
+        dst_image_repo = dst_image_name + ":" + dst_image_tag
+        
         temp_container.start()
         log.debug("Examining source dir = " + src_dir)
         files_to_add = self.filepaths_walk(start_path=src_dir)
@@ -60,25 +68,22 @@ class DockerContainerManager:
         if len(files_to_add) > 0:
             log.info("files_to_add = " + str(files_to_add))
             temporary_tar_file = tempfile.mktemp("-tar.tar")
-            tar = tarfile.open(temporary_tar_file, mode='w')
+
+            # Need to ensure all the temporary files are deleted fromt he 
             for file in files_to_add:
-                log.debug("Adding modified file to archive: " + file)
                 remove_cmd = "docker exec " + temp_container_id + " sh -c 'rm -f " + file + "'"
                 log.debug("Removing existing file with command: " + remove_cmd)
                 # Need to also remove file from image - is there a better way to do with docker_py?
                 os.system(remove_cmd)
                 log.debug("Removal command done")
-                tar.add(file)
-            tar.close()
+
+            log.info("Calling subprocess to generate tar archive for modified files for " + dst_image_repo)
+            self.make_tar_relative_paths(temporary_tar_file, src_dir)
             tar_data_file = open(temporary_tar_file, 'rb')
             tar_data = tar_data_file.read()
             log.debug("Adding temporary tar file at " + temporary_tar_file + " to the container " + str(temp_container_id))
             temp_container.put_archive("/", tar_data)
             tar_data_file.close()
-            # TODO: for now we assume the dest is the same as the source, but with a different tag
-            # this should be more flexible in the naming policy for newly created images
-            dst_image_name = src_image_name
-            dst_image_repo = dst_image_name + ":" + dst_image_tag
             log.debug("Commiting modified files back to the image at " + dst_image_repo)
             # Need to commit back the temporary files into the new image
             temp_container.commit(dst_image_name, dst_image_tag)
@@ -91,7 +96,7 @@ class DockerContainerManager:
         
     def prepare_individual_test_image(self, test_id):
         # TODO: what is the testID?
-        repo_id = "test"
+        #repo_id = "test"
         log.info("Preparing additional images for test " + test_id)
         custom_dir_for_test = self.local_staticfile_path + "/" + test_id
         # For every custom container dir in the test

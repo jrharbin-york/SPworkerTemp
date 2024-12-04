@@ -198,7 +198,7 @@ class TestRunJob:
         resync_output = self.resync()
         if (resync_output == 0):
             containers_output = container_manager.prepare_individual_test_image(self.test_id)
-            if (containers_prepared == 0):
+            if (containers_output == 0):
                 compile_output = self.compile()
                 return compile_output
             else:
