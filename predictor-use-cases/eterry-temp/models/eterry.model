@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TestingMM:TestingSpace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TestingMM="TestingMM" xmlns:TestingMM.Execution="Execution" xmlns:TestingMM.FuzzingOperations="FuzzingOperations" xmlns:TestingMM.MRSPackage="MRSPackage" xmlns:TestingMM.Metrics="Metrics" xmi:id="_VMYbMGKhEe6npZ9UVoAbbA" name="Eterry">
+  <metrics xsi:type="TestingMM.Metrics:FuzzingOperationTimesMetric" xmi:id="_V5eHUHZZEe--UbBGoUiFwA" name="fuzzingOperationTimes" dir="LOWEST" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_a1ShEHZZEe--UbBGoUiFwA" defaultVal="1000.0"/>
+    <initValue xmi:id="_YKRFQHZZEe--UbBGoUiFwA" defaultVal="1000.0"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_5oBHEHZcEe--UbBGoUiFwA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_fW5EAHZZEe--UbBGoUiFwA" name="distanceToHuman1" dir="LOWEST" relatedVariables="_-UqZYLX3Ee-P0_Mfxs1OUA" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_pHjFwHZZEe--UbBGoUiFwA" defaultVal="1000.0"/>
+    <initValue xmi:id="_nx4TUHZZEe--UbBGoUiFwA" defaultVal="1000.0"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_rGs6EHZZEe--UbBGoUiFwA"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_ouYkMKIREe-g-auCzqDGyw" name="distanceToHuman2" dir="LOWEST" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_ouYkMaIREe-g-auCzqDGyw" defaultVal="1000.0"/>
+    <initValue xmi:id="_ouYkMqIREe-g-auCzqDGyw" defaultVal="1000.0"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_ouYkM6IREe-g-auCzqDGyw"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_4sGnALIpEe-faLeayNsLUQ" name="cropDamage" dir="LOWEST" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_4sGnAbIpEe-faLeayNsLUQ" defaultVal="1000.0"/>
+    <initValue xmi:id="_4sGnArIpEe-faLeayNsLUQ" defaultVal="1000.0"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_4sGnA7IpEe-faLeayNsLUQ"/>
+  </metrics>
+  <metrics xsi:type="TestingMM.Metrics:StreamMetric" xmi:id="_-sYucLIpEe-faLeayNsLUQ" name="waypointCompletion" dir="LOWEST" relatedVariables="_azuS8LcUEe-G_b7_F-Au9Q" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_-sYucbIpEe-faLeayNsLUQ" defaultVal="9999.0"/>
+    <initValue xmi:id="_-sYucrIpEe-faLeayNsLUQ" defaultVal="9999.0"/>
+    <streams xsi:type="TestingMM.Metrics:InputStream" xmi:id="_-sYuc7IpEe-faLeayNsLUQ"/>
+  </metrics>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_Rb1OQKISEe-g-auCzqDGyw" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_0ylgcKISEe-g-auCzqDGyw" endTime="100.0"/>
+    <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_KpQ0AKdREe-dTIAqui9fbw"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_c3MZgKdQEe-dTIAqui9fbw" name="YawGoalTolerance" variableToAffect="_4xHgoKIUEe-g-auCzqDGyw">
+    <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_c3OOsKdQEe-dTIAqui9fbw" endTime="100.0"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_uzZeAKv-Ee-eQN-d_YIb2w" name="changeFemalePoseX" variableToAffect="_szlt8Kv0Ee-eQN-d_YIb2w">
+    <activation xsi:type="TestingMM.FuzzingOperations:ConstantActivation" xmi:id="_2_c5cKv-Ee-eQN-d_YIb2w"/>
+    <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_m10NwLfCEe-G_b7_F-Au9Q" lowerBound="4.94328" upperBound="6.94328"/>
+  </possibleFuzzingOperations>
+  <campaigns xmi:id="_NglHoHWGEe-u3qaJErQubA" name="eterryTest" metrics="_V5eHUHZZEe--UbBGoUiFwA _fW5EAHZZEe--UbBGoUiFwA _-sYucLIpEe-faLeayNsLUQ" includedOperations="_Rb1OQKISEe-g-auCzqDGyw _uzZeAKv-Ee-eQN-d_YIb2w">
+    <activationGeneration xsi:type="TestingMM:TimeBasedActivationGenerationMethod" xmi:id="_PG8BcHWGEe-u3qaJErQubA"/>
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_QBHKsHWGEe-u3qaJErQubA" populationSize="1" iterations="1"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="__HxHoHWIEe-u3qaJErQubA" timeLimitSeconds="500"/>
+  </campaigns>
+  <campaigns xmi:id="_GiJy8H1HEe-gyLrZwXdfew" name="fixedCopies" metrics="_V5eHUHZZEe--UbBGoUiFwA _fW5EAHZZEe--UbBGoUiFwA">
+    <activationGeneration xsi:type="TestingMM:TimeBasedActivationGenerationMethod" xmi:id="_GiKaAH1HEe-gyLrZwXdfew"/>
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_GiKaAX1HEe-gyLrZwXdfew" populationSize="64" iterations="64"/>
+    <performedTests xmi:id="_zHXP8KdQEe-dTIAqui9fbw" name="Test_xygoal_tolerance">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_zHXP8adQEe-dTIAqui9fbw" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_zHXP8qdQEe-dTIAqui9fbw" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_zHXP86dQEe-dTIAqui9fbw" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_zHXP9KdQEe-dTIAqui9fbw" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_zHXP9adQEe-dTIAqui9fbw" name="fuzzingOperationTimes" value="1.1859912529131977"/>
+      </metrics>
+      <metrics xmi:id="_zHXP9qdQEe-dTIAqui9fbw" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_zHXP96dQEe-dTIAqui9fbw" name="distanceToPoint" value="1.535676017493531"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_HNakwKweEe-eQN-d_YIb2w" name="Test_static_variable">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_OlflkKweEe-eQN-d_YIb2w" name="static_var_test_human_x" variableToAffect="_szlt8Kv0Ee-eQN-d_YIb2w">
+        <activation xsi:type="TestingMM.FuzzingOperations:ConstantActivation" xmi:id="_SYhLQKweEe-eQN-d_YIb2w"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_Js1CUKxyEe-A7Y3ogAq0Og" lowerBound="4.94328" upperBound="6.94328"/>
+      </operations>
+    </performedTests>
+    <performedTests xmi:id="_C6CPILZSEe-G_b7_F-Au9Q" name="Test_xygoal_10000">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_GEv3oLZSEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_GEv3obZSEe-G_b7_F-Au9Q" startTime="100000.0" endTime="20000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_GEv3orZSEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+    </performedTests>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_GiKd8n1HEe-gyLrZwXdfew" timeLimitSeconds="500"/>
+  </campaigns>
+  <campaigns xmi:id="_CJvYEKdTEe-dTIAqui9fbw" name="repeat_xy_goal_tolerance" metrics="_V5eHUHZZEe--UbBGoUiFwA _fW5EAHZZEe--UbBGoUiFwA _-sYucLIpEe-faLeayNsLUQ">
+    <approach xsi:type="TestingMM:RepeatedExecution" xmi:id="_Kv2SQKdTEe-dTIAqui9fbw" testToRepeat="_zHXP8KdQEe-dTIAqui9fbw" repeatCount="20"/>
+    <performedTests xmi:id="_dVOoULfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat0">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOoUbfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOoUrfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOoU7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOoVLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoVbfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOoVrfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoV7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.507545899217295"/>
+      </metrics>
+      <metrics xmi:id="_dVOoWLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOoWbfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="7.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOoWrfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat1">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOoW7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOoXLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOoXbfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOoXrfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoX7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOoYLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoYbfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.507923688711603"/>
+      </metrics>
+      <metrics xmi:id="_dVOoYrfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOoY7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="-1.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOoZLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat2">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOoZbfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOoZrfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOoZ7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOoaLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoabfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOoarfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoa7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.507856499193565"/>
+      </metrics>
+      <metrics xmi:id="_dVOobLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOobbfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="-1.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOobrfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat3">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOob7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOocLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOocbfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOocrfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoc7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOodLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOodbfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="16.18539048618593"/>
+      </metrics>
+      <metrics xmi:id="_dVOodrfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOod7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOoeLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat4">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOoebfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOoerfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOoe7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOofLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOofbfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOofrfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOof7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.24341893820392"/>
+      </metrics>
+      <metrics xmi:id="_dVOogLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOogbfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOogrfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat5">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOog7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOohLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOohbfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOohrfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoh7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOoiLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoibfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.507869689628183"/>
+      </metrics>
+      <metrics xmi:id="_dVOoirfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOoi7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="-1.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOojLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat6">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOojbfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOojrfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOoj7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOokLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOokbfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOokrfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOok7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="16.0283777735009"/>
+      </metrics>
+      <metrics xmi:id="_dVOolLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOolbfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOolrfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat7">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOol7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOomLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOombfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOomrfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOom7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOonLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOonbfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="15.99328799129399"/>
+      </metrics>
+      <metrics xmi:id="_dVOonrfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOon7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOooLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat8">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOoobfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOoorfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOoo7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOopLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOopbfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOoprfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOop7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="15.959448092557622"/>
+      </metrics>
+      <metrics xmi:id="_dVOoqLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOoqbfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOoqrfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat9">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOoq7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOorLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOorbfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOorrfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOor7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOosLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOosbfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="15.874726434301026"/>
+      </metrics>
+      <metrics xmi:id="_dVOosrfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOos7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOotLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat10">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOotbfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOotrfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOot7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOouLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoubfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOourfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOou7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.244638639886926"/>
+      </metrics>
+      <metrics xmi:id="_dVOovLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOovbfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOovrfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat11">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOov7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOowLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOowbfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOowrfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOow7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOoxLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoxbfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="16.030702430991767"/>
+      </metrics>
+      <metrics xmi:id="_dVOoxrfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOox7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOoyLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat12">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOoybfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOoyrfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOoy7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVOozLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOozbfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVOozrfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVOoz7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.243631023515743"/>
+      </metrics>
+      <metrics xmi:id="_dVOo0LfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVOo0bfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVOo0rfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat13">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVOo07fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVOo1LfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVOo1bfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVPPYLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPYbfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVPPYrfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPY7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="16.027170657274006"/>
+      </metrics>
+      <metrics xmi:id="_dVPPZLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVPPZbfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVPPZrfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat14">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVPPZ7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVPPaLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVPPabfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVPParfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPa7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVPPbLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPbbfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.24253094694042"/>
+      </metrics>
+      <metrics xmi:id="_dVPPbrfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVPPb7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVPPcLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat15">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVPPcbfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVPPcrfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVPPc7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVPPdLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPdbfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVPPdrfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPd7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="15.71499506324996"/>
+      </metrics>
+      <metrics xmi:id="_dVPPeLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVPPebfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVPPerfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat16">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVPPe7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVPPfLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVPPfbfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVPPfrfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPf7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVPPgLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPgbfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.221280515502674"/>
+      </metrics>
+      <metrics xmi:id="_dVPPgrfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVPPg7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="7.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVPPhLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat17">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVPPhbfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVPPhrfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVPPh7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVPPiLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPibfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="1000.0"/>
+      </metrics>
+      <metrics xmi:id="_dVPPirfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPi7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.507586610822464"/>
+      </metrics>
+      <metrics xmi:id="_dVPPjLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVPPjbfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="7.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVPPjrfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat18">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVPPj7fCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVPPkLfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVPPkbfCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVPPkrfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPk7fCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVPPlLfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPlbfCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="15.685521509243985"/>
+      </metrics>
+      <metrics xmi:id="_dVPPlrfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVPPl7fCEe-G_b7_F-Au9Q" name="waypointCompletion" value="3.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_dVPPmLfCEe-G_b7_F-Au9Q" name="Test_xygoal_tolerance_repeat19">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_dVPPmbfCEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_dVPPmrfCEe-G_b7_F-Au9Q" startTime="400.0" endTime="1000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_dVPPm7fCEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_dVPPnLfCEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPnbfCEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="600.0"/>
+      </metrics>
+      <metrics xmi:id="_dVPPnrfCEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_dVPPn7fCEe-G_b7_F-Au9Q" name="distanceToHuman1" value="12.75934419419027"/>
+      </metrics>
+      <metrics xmi:id="_dVPPoLfCEe-G_b7_F-Au9Q" metric="_-sYucLIpEe-faLeayNsLUQ">
+        <result xmi:id="_dVPPobfCEe-G_b7_F-Au9Q" name="waypointCompletion" value="4.0"/>
+      </metrics>
+    </performedTests>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_CJvYI6dTEe-dTIAqui9fbw" timeLimitSeconds="500"/>
+  </campaigns>
+  <campaigns xmi:id="_EmtoQKweEe-eQN-d_YIb2w" name="static_variable_test" metrics="_V5eHUHZZEe--UbBGoUiFwA _fW5EAHZZEe--UbBGoUiFwA _-sYucLIpEe-faLeayNsLUQ">
+    <approach xsi:type="TestingMM:RepeatedExecution" xmi:id="_EmwEgKweEe-eQN-d_YIb2w" testToRepeat="_HNakwKweEe-eQN-d_YIb2w" repeatCount="20"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_EmwEgaweEe-eQN-d_YIb2w" timeLimitSeconds="500"/>
+  </campaigns>
+  <campaigns xmi:id="_IsmDoLZSEe-G_b7_F-Au9Q" name="repeat_null" metrics="_V5eHUHZZEe--UbBGoUiFwA _fW5EAHZZEe--UbBGoUiFwA">
+    <approach xsi:type="TestingMM:RepeatedExecution" xmi:id="_IsmDobZSEe-G_b7_F-Au9Q" testToRepeat="_C6CPILZSEe-G_b7_F-Au9Q" repeatCount="10"/>
+    <performedTests xmi:id="_-bKL47ZYEe-G_b7_F-Au9Q" name="Test_xygoal_10000_repeat0">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_-bKL5LZYEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_-bKy8LZYEe-G_b7_F-Au9Q" startTime="100000.0" endTime="20000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_-bKy8bZYEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_-bKy8rZYEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_-bKy87ZYEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="-80000.0"/>
+      </metrics>
+      <metrics xmi:id="_-bKy9LZYEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_-bKy9bZYEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.24267650592667"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_-bLaALZYEe-G_b7_F-Au9Q" name="Test_xygoal_10000_repeat1">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_-bLaAbZYEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_-bLaArZYEe-G_b7_F-Au9Q" startTime="100000.0" endTime="20000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_-bLaA7ZYEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_-bLaBLZYEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_-bMBELZYEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="-80000.0"/>
+      </metrics>
+      <metrics xmi:id="_-bMBEbZYEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_-bMBErZYEe-G_b7_F-Au9Q" name="distanceToHuman1" value="12.383780144314306"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_-bMBE7ZYEe-G_b7_F-Au9Q" name="Test_xygoal_10000_repeat2">
+      <operations xsi:type="TestingMM.FuzzingOperations:RandomValueFromSetOperation" xmi:id="_-bMBFLZYEe-G_b7_F-Au9Q" name="XYGoalTolerance" variableToAffect="_TvAx0KISEe-g-auCzqDGyw">
+        <activation xsi:type="TestingMM.FuzzingOperations:FixedTimeActivation" xmi:id="_-bMoILZYEe-G_b7_F-Au9Q" startTime="100000.0" endTime="20000.0"/>
+        <valueSet xsi:type="TestingMM.FuzzingOperations:DoubleRange" xmi:id="_-bMoIbZYEe-G_b7_F-Au9Q" propertyName="" randChoice="ALWAYS_LOW" lowerBound="0.1" upperBound="0.1"/>
+      </operations>
+      <metrics xmi:id="_-bMoIrZYEe-G_b7_F-Au9Q" metric="_V5eHUHZZEe--UbBGoUiFwA">
+        <result xmi:id="_-bMoI7ZYEe-G_b7_F-Au9Q" name="fuzzingOperationTimes" value="-80000.0"/>
+      </metrics>
+      <metrics xmi:id="_-bMoJLZYEe-G_b7_F-Au9Q" metric="_fW5EAHZZEe--UbBGoUiFwA">
+        <result xmi:id="_-bMoJbZYEe-G_b7_F-Au9Q" name="distanceToHuman1" value="17.243564990240404"/>
+      </metrics>
+    </performedTests>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_IsmDorZSEe-G_b7_F-Au9Q" timeLimitSeconds="500"/>
+  </campaigns>
+  <mrs xmi:id="_Z4M2cCv_EeykGsd0UrLwGA" launchDelaySeconds="10" launchFileLocation="/home/jharbin/academic/soprano/eterry/Gazebo/docker/run_eterry.sh">
+    <variables xsi:type="TestingMM.MRSPackage:ParameterVariable" xmi:id="_TvAx0KISEe-g-auCzqDGyw" name="general_goal_checker.xy_goal_tolerance" type="_0fIyoCwcEeykGsd0UrLwGA" componentName="/controller_server"/>
+    <variables xsi:type="TestingMM.MRSPackage:ParameterVariable" xmi:id="_4xHgoKIUEe-g-auCzqDGyw" name="general_goal_checker.yaw_goal_tolerance" type="_0fIyoCwcEeykGsd0UrLwGA" componentName="/controller_server"/>
+    <variables xsi:type="TestingMM.MRSPackage:EventBasedVariable" xmi:id="_NW0rsKZ7Ee-dTIAqui9fbw" name="/odom" type="_U0TJ4KZ7Ee-dTIAqui9fbw"/>
+    <variables xsi:type="TestingMM.MRSPackage:StaticVariable" xmi:id="_szlt8Kv0Ee-eQN-d_YIb2w" name="changeFemalePoseXLocation" type="_XPV2cCwCEeykGsd0UrLwGA">
+      <locations xsi:type="TestingMM.MRSPackage:XMLConfigLocation" xmi:id="_vst3MKv0Ee-eQN-d_YIb2w" root="_3JFiIKv0Ee-eQN-d_YIb2w" fileName="/home/eterry/eterry_simulation/install/gazebo_simulation/share/gazebo_simulation/worlds/simple_world.model" xpathExpression="/sdf/world/state[@world_name='default']/model[@name='citizen_extras_female_03']/pose/text()" elementNum="1"/>
+      <locations xsi:type="TestingMM.MRSPackage:XMLConfigLocation" xmi:id="_zNyxQKv0Ee-eQN-d_YIb2w" root="_3JFiIKv0Ee-eQN-d_YIb2w" fileName="/home/eterry/eterry_simulation/install/gazebo_simulation/share/gazebo_simulation/worlds/simple_world.model" xpathExpression="/sdf/world/state[@world_name='default']/model[@name='citizen_extras_female_03']/link[@name='link']/pose/text()" elementNum="1"/>
+    </variables>
+    <variables xsi:type="TestingMM.MRSPackage:EventBasedVariable" xmi:id="_-UqZYLX3Ee-P0_Mfxs1OUA" name="/humans/citizen_extras_female_03" type="_7vBM0LX3Ee-P0_Mfxs1OUA"/>
+    <variables xsi:type="TestingMM.MRSPackage:EventBasedVariable" xmi:id="_azuS8LcUEe-G_b7_F-Au9Q" name="/next_waypoint_count" type="_X1njELcUEe-G_b7_F-Au9Q"/>
+    <nodes xmi:id="_gZyUICv_EeykGsd0UrLwGA" name="ETERRY" publisher="_NW0rsKZ7Ee-dTIAqui9fbw"/>
+    <nodes xmi:id="_iHhnwJSLEeyi3puJ8GqOAQ" name="teleop_key"/>
+    <nodes xmi:id="_XUXu8KISEe-g-auCzqDGyw" name="controller_server"/>
+    <simulator xsi:type="TestingMM.MRSPackage:ROSSimulator" xmi:id="_mtRLoEXuEeybjfS_xnSIvQ" hostname="0.0.0.0" port="9090"/>
+    <propertyType xmi:id="_ksEosCv_EeykGsd0UrLwGA" name="geometry_msgs/msg/Twist">
+      <parameters xmi:id="_l2jiACwDEeykGsd0UrLwGA" name="linear" type="_QNs_sCwCEeykGsd0UrLwGA">
+        <subparameters xmi:id="_VBnvwCwEEeykGsd0UrLwGA" name="X" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_YR7C4CwEEeykGsd0UrLwGA" name="Y" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_aLGLACwEEeykGsd0UrLwGA" name="Z" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+      </parameters>
+      <parameters xmi:id="_ucOYgCwdEeykGsd0UrLwGA" name="angular" type="_QNs_sCwCEeykGsd0UrLwGA">
+        <subparameters xmi:id="_xgR_YCwdEeykGsd0UrLwGA" name="X" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_xgR_YSwdEeykGsd0UrLwGA" name="Y" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_xgR_YiwdEeykGsd0UrLwGA" name="Z" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+      </parameters>
+    </propertyType>
+    <propertyType xmi:id="_67hGYCv_EeykGsd0UrLwGA" name="turtlesim/msg/Pose">
+      <parameters xmi:id="_yR3CwCwcEeykGsd0UrLwGA" name="X" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+      <parameters xmi:id="_60-6YCwcEeykGsd0UrLwGA" name="Y" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+      <parameters xmi:id="_9P5doCwcEeykGsd0UrLwGA" name="theta" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+      <parameters xmi:id="_-V3AICwcEeykGsd0UrLwGA" name="linear_velocity" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+      <parameters xmi:id="_AKcjMCwdEeykGsd0UrLwGA" name="angular_velocity" type="_0fIyoCwcEeykGsd0UrLwGA"/>
+    </propertyType>
+    <propertyType xmi:id="_QNs_sCwCEeykGsd0UrLwGA" name="Vector3"/>
+    <propertyType xmi:id="_XPV2cCwCEeykGsd0UrLwGA" name="float64"/>
+    <propertyType xmi:id="_0fIyoCwcEeykGsd0UrLwGA" name="float32"/>
+    <propertyType xmi:id="_U0TJ4KZ7Ee-dTIAqui9fbw" name="nav_msgs/msg/Odometry"/>
+    <propertyType xmi:id="_7vBM0LX3Ee-P0_Mfxs1OUA" name="geometry_msgs/msg/Point">
+      <parameters xmi:id="_7vBM0bX3Ee-P0_Mfxs1OUA" name="linear" type="_QNs_sCwCEeykGsd0UrLwGA">
+        <subparameters xmi:id="_7vBM0rX3Ee-P0_Mfxs1OUA" name="X" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_7vBM07X3Ee-P0_Mfxs1OUA" name="Y" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_7vBM1LX3Ee-P0_Mfxs1OUA" name="Z" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+      </parameters>
+      <parameters xmi:id="_7vBM1bX3Ee-P0_Mfxs1OUA" name="angular" type="_QNs_sCwCEeykGsd0UrLwGA">
+        <subparameters xmi:id="_7vBM1rX3Ee-P0_Mfxs1OUA" name="X" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_7vBM17X3Ee-P0_Mfxs1OUA" name="Y" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+        <subparameters xmi:id="_7vBM2LX3Ee-P0_Mfxs1OUA" name="Z" type="_XPV2cCwCEeykGsd0UrLwGA"/>
+      </parameters>
+    </propertyType>
+    <propertyType xmi:id="_bKbGELbwEe-G_b7_F-Au9Q" name="nav2_msgs/action/FollowWaypoints_FeedbackMessage"/>
+    <propertyType xmi:id="_X1njELcUEe-G_b7_F-Au9Q" name="std_msgs/Int32"/>
+    <execStrategy xsi:type="TestingMM.Execution:DistributedExecutionStrategy" xmi:id="_zZ5SoHWFEe-u3qaJErQubA" automaticWorkerDetection="false" exptRunnerIP="192.168.1.238">
+      <dependencies xsi:type="TestingMM.Execution:ContainerDependency" xmi:id="_3JFiIKv0Ee-eQN-d_YIb2w" imageName="eterry"/>
+      <extraExecutionTargets xsi:type="TestingMM.Execution:SOPRANOWorkerNode" xmi:id="_-OHDIHWFEe-u3qaJErQubA" ipAddress="192.168.1.238"/>
+      <allocationStrategy xsi:type="TestingMM.Execution:DynamicTaskAllocation" xmi:id="_MM-KsHWGEe-u3qaJErQubA"/>
+    </execStrategy>
+  </mrs>
+</TestingMM:TestingSpace>
